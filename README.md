@@ -10,17 +10,17 @@
 
 ## 版本特色
 
-镜像版本更新后我们会公布当前版本镜像支持内容，如想查看镜像支持内容请点击 [RevyOS版本更新日志](./Change%20Log/) 后选择您所需要的版本进行查看。
+镜像版本更新后我们会公布当前版本镜像支持内容，如您想查看镜像支持内容请点击 [RevyOS版本更新日志](./Change%20Log/) 后选择您所需要的版本进行查看。
 
 同时我们会在[此界面](./update%20notice.md)发布下版本预期更新内容，您可在该页面进行查看。
 
 ## 镜像下载及刷写
 
-RevyOS 的lpi4a用户版镜像目前在 ISCAS 开源镜像站进行更新。如果想获取 RevyOS 最新版镜像请访问：[镜像下载](https://mirror.iscas.ac.cn/revyos/extra/images/lpi4a/)
+RevyOS 的lpi4a用户版镜像目前在 ISCAS 开源镜像站进行更新。如您想获取 RevyOS 最新版镜像请访问：[镜像下载](https://mirror.iscas.ac.cn/revyos/extra/images/lpi4a/)
 
 镜像刷写请参考：[镜像刷写教程](https://wiki.sipeed.com/hardware/zh/lichee/th1520/lpi4a/4_burn_image.html#%E6%89%B9%E9%87%8F%E7%83%A7%E5%BD%95)
 
-RevyOS 最新版镜像为20230614版本，其中 U-boot 文件下载链接为：[U-boot下载](https://mirror.iscas.ac.cn/revyos/extra/images/lpi4a/20230511/u-boot-with-spl-lpi4a-20230510.bin)
+RevyOS 最新版镜像为 20230614 版本，其中 U-boot 文件下载链接为：[U-boot下载](https://mirror.iscas.ac.cn/revyos/extra/images/lpi4a/20230511/u-boot-with-spl-lpi4a-20230510.bin)
 
 boot 文件以及 root 文件下载链接为：[镜像下载](https://mirror.iscas.ac.cn/revyos/extra/images/lpi4a/20230614/)
 
