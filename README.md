@@ -2,7 +2,11 @@
 
 ## 简介
 
-RevyOS 是由如意SDK团队的 RevyOS 小队支持开发的一款针对 T-Head 芯片生态的 Debian 优化定制发行版，围绕 c906fdv/c910v/c908 等芯片提供了完整而全面的适配和优化支持，默认集成支持 RVV0.7.1和 XThead 的 GCC 工具链，并搭载使用 RVV0.7.1指令集优化过的 glibc 和 kernel。基于上述定制和优化的 RevyOS，在 Lichee RV，Lichee Pi 4A 等硬件平台上，能够提供优秀的性能和极佳的体验。
+RevyOS 是由如意SDK团队的 RevyOS 小队支持开发的一款针对 T-Head 芯片生态的 Debian 优化定制发行版。
+
+围绕 c906fdv/c910v/c908 等芯片提供了完整而全面的适配和优化支持，默认集成支持 RVV0.7.1和 XThead 的 GCC 工具链，并搭载使用 RVV0.7.1指令集优化过的 glibc 和 kernel。
+
+基于上述定制和优化的 RevyOS，在 Lichee RV，Lichee Pi 4A 等硬件平台上，能够提供优秀的性能和极佳的体验。
 
 ## 版本特色
 
