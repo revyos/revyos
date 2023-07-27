@@ -12,7 +12,7 @@ RevyOS 是由如意SDK团队的 RevyOS 小队支持开发的一款针对 T-Head 
 
 RevyOS 的lpi4a用户版镜像目前以每月一次的更新速度在 ISCAS 开源镜像站进行更新。如果想获取 RevyOS 最新版镜像请访问：[镜像下载](https://mirror.iscas.ac.cn/revyos/extra/images/lpi4a/)
 
-镜像刷写请参考：[镜像刷写教程] (https://wiki.sipeed.com/hardware/zh/lichee/th1520/lpi4a/4_burn_image.html#%E6%89%B9%E9%87%8F%E7%83%A7%E5%BD%95)
+镜像刷写请参考：[镜像刷写教程](https://wiki.sipeed.com/hardware/zh/lichee/th1520/lpi4a/4_burn_image.html#%E6%89%B9%E9%87%8F%E7%83%A7%E5%BD%95)
 
 RevyOS 最新版镜像为20230614版本，其中 U-boot 文件下载链接为：[U-boot下载](https://mirror.iscas.ac.cn/revyos/extra/images/lpi4a/20230511/u-boot-with-spl-lpi4a-20230510.bin)
 
