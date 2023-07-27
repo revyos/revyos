@@ -8,12 +8,6 @@
 
 基于上述定制和优化的 RevyOS，在 Lichee RV，Lichee Pi 4A 等硬件平台上，能够提供优秀的性能和极佳的体验。
 
-## 版本特色
-
-镜像版本更新后我们会公布当前版本镜像支持内容，如您想查看镜像支持内容请点击 [RevyOS版本更新日志](./Change%20Log/) 后选择您所需要的版本进行查看。
-
-同时我们会在[此界面](./update%20notice.md)发布下版本预期更新内容，您可在该页面进行查看。
-
 ## 镜像下载及刷写
 
 RevyOS 的lpi4a用户版镜像目前在 ISCAS 开源镜像站进行更新。如您想获取 RevyOS 最新版镜像请访问：[镜像下载](https://mirror.iscas.ac.cn/revyos/extra/images/lpi4a/)
@@ -25,6 +19,12 @@ RevyOS 最新版镜像为 20230614 版本，其中 U-boot 文件下载链接为�
 boot 文件以及 root 文件下载链接为：[镜像下载](https://mirror.iscas.ac.cn/revyos/extra/images/lpi4a/20230614/)
 
 在完成镜像刷写后用户在登录界面，输入用户名 'debian' ，密码 'debian' 就可以登录进入系统了。
+
+## 更新与预告
+
+镜像版本更新后我们会公布当前版本镜像支持内容，如您想查看镜像支持内容请点击 [RevyOS版本更新日志](./Change%20Log/) 后选择您所需要的版本进行查看。
+
+同时我们会在[此界面](./update%20notice.md)发布下版本预期更新内容，您可在该页面进行查看。
 
 ## issue相关
 
