@@ -12,7 +12,7 @@
 
 ## 镜像下载及刷写
 
-RevyOS 的lpi4a用户版镜像目前在 ISCAS 开源镜像站进行更新。如您想获取 RevyOS 最新版镜像请访问：[镜像下载](https://mirror.iscas.ac.cn/revyos/extra/images/lpi4a/)
+RevyOS 的lpi4a用户版镜像目前在 ISCAS（中国科学院软件研究所） 开源镜像站进行更新。如您想获取 RevyOS 最新版镜像请访问：[镜像下载](https://mirror.iscas.ac.cn/revyos/extra/images/lpi4a/)
 
 镜像刷写请参考：[镜像刷写教程](https://wiki.sipeed.com/hardware/zh/lichee/th1520/lpi4a/4_burn_image.html#%E6%89%B9%E9%87%8F%E7%83%A7%E5%BD%95)
 
