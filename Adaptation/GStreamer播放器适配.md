@@ -1,6 +1,8 @@
 
 # 支持 PTG omxil 库的 GStreamer 播放器适配文档
 
+适用SDK v1.1.2
+
 ## 概述
 
 PTG 的 OpenMAX IL 库（下称 `vpu-omxil`）可使 LicheePi 4A 能够流畅硬解码 4k 60fps 的视频，那么具体应该如何使用该库呢？本文将主要介绍 LicheePi 4A 开发板上 Parole 播放器的集成与使用，用户可根据本文来了解在 LicheePi 4A 上的适配过程
@@ -72,11 +74,15 @@ video stream----+--->| omxh264dec +------>| video-sink +----+-->| player |
 
 PTG 提供的驱动源：
 
-[https://gitee.com/thead-yocto/vpu-vc8000e-kernel](https://gitee.com/thead-yocto/vpu-vc8000e-kernel)
+[https://github.com/revyos/vpu-vc8000e-kernel](https://github.com/revyos/vpu-vc8000e-kernel)
 
-[https://gitee.com/thead-yocto/vpu-vc8000d-kernel](https://gitee.com/thead-yocto/vpu-vc8000d-kernel)
+[https://github.com/revyos/vpu-vc8000d-kernel](https://github.com/revyos/vpu-vc8000d-kernel)
 
-[https://gitee.com/thead-yocto/video_memory](https://gitee.com/thead-yocto/video_memory)
+[https://github.com/revyos/video_memory](https://github.com/revyos/video_memory)
+
+##### 1.1.1替代方案
+
+[revyos/thead-kernel](https://github.com/revyos/thead-kernel) 已经合并了上述三个内核模块, 使用revyos_defconfig 可以无需编译上述内核模块
 
 #### 1.2 安装驱动
 
@@ -115,7 +121,9 @@ EOF
 
 #### RevyOS 适配记录
 
-如果要获取 RevyOS 特定版本的内核模块，可进入 [revyos /thead-kernel](https://github.com/revyos/thead-kernel) ，并在 GitHub CI 中下载 artifacts
+如果要获取 RevyOS 特定版本的内核模块，可进入 [revyos/thead-kernel](https://github.com/revyos/thead-kernel) ，并在 GitHub CI 中下载 artifacts
+
+
 
 ### 2. 安装 vpu-omxil 并调整配置
 
@@ -141,6 +149,25 @@ omxregister-bellagio -v /usr/lib/omxil/
 ```
 
 使用 omxregister-bellagio 生成注册文件，默认路径为 ~/.omxregister
+
+##### 2.1.1 RevyOS/Debian 注册组件
+
+[th1520-vpu](https://github.com/revyos/th1520-vpu) 利用了 debian 在 `usr/lib/riscv64-linux-gnu/libomxil-bellagio0` 安装之后
+触发自动注册行为 结果如下
+
+```bash
+cat /var/lib/libomxil-bellagio0/registry
+/usr/lib/riscv64-linux-gnu/libomxil-bellagio0/libOMX.hantro.H2.video.encoder.so
+ ==> OMX.hantro.H2.video.encoder ==> OMX.hantro.H2.video.encoder.avc:OMX.hantro.H2.video.encoder.hevc:
+/usr/lib/riscv64-linux-gnu/libomxil-bellagio0/libOMX.hantro.VC8000D.image.decoder.so
+ ==> OMX.hantro.VC8000D.image.decoder ==> OMX.hantro.VC8000D.image.decoder.jpeg:
+/usr/lib/riscv64-linux-gnu/libomxil-bellagio0/libOMX.hantro.H2.image.encoder.so
+ ==> OMX.hantro.H2.image.encoder ==> OMX.hantro.H2.image.encoder.jpeg:
+/usr/lib/riscv64-linux-gnu/libomxil-bellagio0/libOMX.hantro.VC8000D.video.decoder.so
+ ==> OMX.hantro.VC8000D.video.decoder ==> OMX.hantro.VC8000D.video.decoder.mpeg4:OMX.hantro.VC8000D.video.decoder.avc:OMX.hantro.VC8000D.video.decoder.avs:OMX.hantro.VC8000D.video.decoder.h263:OMX.hantro.VC8000D.video.decoder.wmv:OMX.hantro.VC8000D.video.decoder.vp6:OMX.hantro.VC8000D.video.decoder.vp8:OMX.hantro.VC8000D.video.decoder.jpeg:OMX.hantro.VC8000D.video.decoder.hevc:OMX.hantro.VC8000D.video.decoder.vp9:OMX.hantro.VC8000D.video.decoder.avs2:
+```
+
+
 
 #### 2.2 调整 gstomx.conf 的设置
 
