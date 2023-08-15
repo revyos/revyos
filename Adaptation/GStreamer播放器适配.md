@@ -236,10 +236,10 @@ RevyOS 适配过程中对于初始化动态库失败找到了如下三种原因�
 
 ### RevyOS 适配记录
 
-- `**waylandsink**`：由于现在（20230720）RevyOS 采用了 Xfce 桌面，不可能支持 Wayland，故 `waylandsink`从原理上无法使用
-- `**fbdevsink**`与`**ximagesink**`：无法使用
-- `**xvimagesink**`：通过[流水线图](https://gstreamer.freedesktop.org/documentation/tutorials/basic/debugging-tools.html#getting-pipeline-graphs)以及日志可以确定，playbin 或 autovideosink 会自动调用 xvimagesink，使用 perf 分析后可以发现，使用xvimagesink 不可避免地会进行大量的 memcpy 操作，严重降低解码性能；该问题在获得PTG的 dmabuf 补丁后依然存在，故无法使用
-- `**gtkglsink**`：[GTK3 不支持 EGL on X11](https://gitlab.gnome.org/GNOME/gtk/-/issues/738)，而 RevyOS 目前基于 x11，且只支持 EGL，故无法使用
+- **`waylandsink`**：由于现在（20230720）RevyOS 采用了 Xfce 桌面，不可能支持 Wayland，故 `waylandsink`从原理上无法使用
+- **`fbdevsink`**与**`ximagesink`**：无法使用
+- **`xvimagesink`**：通过[流水线图](https://gstreamer.freedesktop.org/documentation/tutorials/basic/debugging-tools.html#getting-pipeline-graphs)以及日志可以确定，playbin 或 autovideosink 会自动调用 xvimagesink，使用 perf 分析后可以发现，使用xvimagesink 不可避免地会进行大量的 memcpy 操作，严重降低解码性能；该问题在获得PTG的 dmabuf 补丁后依然存在，故无法使用
+- **`gtkglsink`**：[GTK3 不支持 EGL on X11](https://gitlab.gnome.org/GNOME/gtk/-/issues/738)，而 RevyOS 目前基于 x11，且只支持 EGL，故无法使用
 
 剩下的只有`glimagesink`，根据 [Running and debugging GStreamer Applications](https://gstreamer.freedesktop.org/documentation/gstreamer/running.html#environment-variables)，并观察其他使用到 glimagesink 的例子，可以猜测需要明确指定环境变量 `GST_GL_API`与 `GST_GL_PLATFORM`
 由于 RevyOS 使用了 gles2+egl 的组合，使用如下的命令，成功硬解。
@@ -270,6 +270,8 @@ video stream----+--->| omxh264dec +------>| video-sink +----+-->| player |
 
 ### RevyOS 适配记录
 
+#### videosink 选型
+
 根据 [https://gstreamer.freedesktop.org/apps/](https://gstreamer.freedesktop.org/apps/) 进行简单的排查
 
 | 是否可用 | 是否更新 | 应用名 | 备注 |
@@ -293,7 +295,95 @@ video stream----+--->| omxh264dec +------>| video-sink +----+-->| player |
 
 [parole-01-add-glimagesink-support.patch](https://gist.github.com/Sakura286/26777ea8204c1819885e093806a4f7ca#file-parole-01-add-glimagesink-support-patch)
 
-至此，粗略的适配工作完成。
+#### seek 卡死问题
+
+##### 问题描述
+
+如果以 4s 以上的间隔拉动进度条，seek 基本不会出现问题。我试着以1~2s左右的间隔拖动进度条，大约有20%的概率会出现画面停住，大约4s后音频停止的情况，并报audio-sink underflow 错误。向前拖与向后拖，高分辨率与低分辨率，拖动距离长与拖动距离短，与这些因素未见明显的关系。
+
+##### 问题思考
+
+parole 相对比较顶层，应当把问题缩小排查。先抛开播放器，使用`gst-play-1.0`工具进行测试，该工具在包`gstreamer1.0-plugins-base-apps`中，使用如下命令进行测试：
+
+```log
+GST_DEBUG_DUMP_DOT_DIR=gst-dump/ gst-play-1.0 --videosink=glimagesink  /media/debian/4A21-0000/video/video/test_animal_4k60fps.mp4  --gst-debug-level=3
+```
+
+可以使用左右方向键调整播放进度，发现仍然会报如下错误
+
+```log
+0:00:13.579340331 34278 0x3fa465ba90 WARN pulse pulsesink.c:716:gst_pulsering_stream_overflow_cb:<pulsesink0> Got overflow
+```
+
+pulsesink 是一种 audio-sink ，所以出问题的可能并不是视频而是音频。因此，指定 audio-sink 为 fakeaudiosink，然后进行测试：
+
+```shell
+GST_DEBUG_DUMP_DOT_DIR=gst-dump/ gst-play-1.0 --videosink=glimagesink --audiosink=fakeaudiosink /media/debian/4A21-0000/video/video/test_animal_4k60fps.mp4  --gst-debug-level=3
+```
+
+没有再次出现问题，可以判定可能是 audio-sink 的问题。
+
+接下来要解决的问题便成了——需要用什么 audio-sink？
+
+##### audio-sink 的选型
+
+根据 [GStreamer 官方文档](https://gstreamer.freedesktop.org/documentation/tutorials/basic/debugging-tools.html?#getting-pipeline-graphs)，使用如下命令获得解码时的 pipeline:
+
+```log
+GST_DEBUG_DUMP_DOT_DIR=gst-dump gst-play-1.0 --videosink=glimagesink  /media/debian/4A21-0000/video/video/test_animal_4k60fps.mp4
+cd gst-dump
+dot -Tpng 0.00.01.544966313-gst-play.async-done.dot > test.png
+```
+
+默认情况下 gstbin 应该会使用 autoaudiosink 来自动选择 audio-sink，从流水线图可以看到是 pulsesink，与前文中日志的输出可以对应。
+
+查看[parole 的源码](https://github.com/xfce-mirror/parole/blob/f2e72acec03b701bb65a425a1ce97720babbbdc6/src/gst/parole-gst.c#L1978)，发现 parole 使用了 autoaudiosink，那么自然会自动选择 pulsesink。
+
+解决方案有两个：
+
+1. 直接修复 pulsesink 的问题
+2. 寻找下一种可用的 audio-sink
+
+播放时难以调试，可以先试着探索方案2，那么摆在面前的解决方案又分成了两条
+
+1. 使 autoaudiosink 自动选择另外的 audio-sink
+2. 使 parole 直接指定特定的 audio-sink
+
+parole 并没有特别指定 audio-sink，所以方案 1 不合适
+
+查看 gst-inspect-1.0 内的插件，音频 sink 有
+
+| 插件名 | 优先级 | 备注 |
+| --- | --- | --- |
+| ✔️ alsasink | 256 | ✔️ 可用 |
+|||✔️ seek 正常 |
+|||❌ 音频有噪点 |
+| ✔️ autoaudiosink | 0 | ✔️ 可用，默认选用优先级最高的 pulsesink |
+| ~~interaudiosink~~ | ~~0~~ | ~~❌ 不可用~~ |
+| ~~jackaudiosink~~ | ~~256~~ | ~~❌ 不可用~~ |
+| ✔️ openalsink | 128 | ✔️ 可用
+|||✔️ seek 正常|
+|||❌ 音频有噪点 |
+| ~~oss4sink~~ | ~~129~~ | ~~❌ 不可用~~ |
+| ~~osssink~~ | ~~128~~ | ~~❌ 不可用~~ |
+| ✔️ pulsesink | 266 | ✔️ 默认选用 |
+|||✔️ 可用|
+|||❌ seek 出错 |
+
+看起来，除了 pulsesink 之外，还有 alsasink openalsink 可用，但这两者都有噪点问题
+根据 [Example GStreamer Pipelines](https://labs.isee.biz/index.php/Example_GStreamer_Pipelines) 搭建 gst-launch-1.0 的 pipeline
+
+```shell
+gst-launch-1.0 filesrc location=/media/debian/4A21-0000/video/video/test_motor_4k60.mp4 ! qtdemux name=demux \
+demux.audio_0 ! queue !  aacparse ! avdec_aac ! audioconvert ! audioresample ! alsasink \
+demux.video_0 ! queue ! h264parse ! decodebin ! videoconvert ! videoscale ! glimagesink --gst-debug-level=3
+```
+
+##### 使用 alsasink
+
+GStreamer 的 autovideosink 与 autoaudiosink 本身并不提供解码功能，它们**根据 rank 的高低来选择默认的 sink** ，也就是说，如果我们想用 alsasink 的话，可以直接提高其 rank；pulsesink 的优先级是 `primary + 10`，只要比这个高即可。 alsasink patch:
+
+https://gist.github.com/Sakura286/26777ea8204c1819885e093806a4f7ca#file-parole-02-upgrade-alsasink-patch
 
 ## 总结：RevyOS 适配工作
 
