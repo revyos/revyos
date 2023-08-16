@@ -16,9 +16,9 @@ __RevyOS__ 的Lichee Pi 4A用户版镜像目前在 ISCAS（中国科学院软件
 
 镜像刷写请参考：[镜像刷写教程](https://wiki.sipeed.com/hardware/zh/lichee/th1520/lpi4a/4_burn_image.html#%E6%89%B9%E9%87%8F%E7%83%A7%E5%BD%95)
 
-__RevyOS__ 最新版镜像为 20230614 版本，其中 __U-boot__ 文件下载链接为：[U-boot下载](https://mirror.iscas.ac.cn/revyos/extra/images/lpi4a/20230511/u-boot-with-spl-lpi4a-20230510.bin)
+__RevyOS__ 最新版镜像为 20230810 版本，其中 __U-boot__ 文件下载链接为：[U-boot下载](https://mirror.iscas.ac.cn/revyos/extra/images/lpi4a/20230810/)
 
-boot文件以及root文件下载链接为：[镜像下载](https://mirror.iscas.ac.cn/revyos/extra/images/lpi4a/20230614/)
+boot文件以及root文件下载链接为：[镜像下载](https://mirror.iscas.ac.cn/revyos/extra/images/lpi4a/20230810)
 
 在完成镜像刷写后用户在登录界面，输入用户名 `debian`，密码 `debian` 就可以登录进入系统了。
 
