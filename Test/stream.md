@@ -23,10 +23,10 @@ DN=2000000：指定测试数组a[]、b[]、c[]的大小（Array size）。该值
 - -DNTIMES=10：执行的次数，并从这些结果中选最优值。
 - OMP_NUM_THREADS=8 线程数量。
 
-参考结果：
+参考结果（RevyOS 0810版本测试结果）：
 
 ```
-debian@lpi4a:~/Desktop/STREAM$ ./stream
+debian@lpi4a:~/STREAM$ ./stream
 -------------------------------------------------------------
 STREAM version $Revision: 5.10 $
 -------------------------------------------------------------
@@ -48,8 +48,8 @@ Number of Threads requested = 8
 Number of Threads counted = 8
 -------------------------------------------------------------
 Your clock granularity/precision appears to be 1 microseconds.
-Each test below will take on the order of 21622 microseconds.
-   (= 21622 clock ticks)
+Each test below will take on the order of 21661 microseconds.
+   (= 21661 clock ticks)
 Increase the size of the arrays if this shows that
 you are not getting at least 20 clock ticks per test.
 -------------------------------------------------------------
@@ -58,11 +58,12 @@ For best results, please be sure you know the
 precision of your system timer.
 -------------------------------------------------------------
 Function    Best Rate MB/s  Avg time     Min time     Max time
-Copy:            8364.2     0.019258     0.019129     0.019508
-Scale:           8291.0     0.019572     0.019298     0.020162
-Add:             6223.6     0.038835     0.038563     0.040011
-Triad:           6222.5     0.038776     0.038570     0.039470
+Copy:            8333.3     0.019253     0.019200     0.019286
+Scale:           8273.8     0.019399     0.019338     0.019489
+Add:             6203.5     0.038816     0.038688     0.038931
+Triad:           6237.7     0.038771     0.038476     0.039272
 -------------------------------------------------------------
 Solution Validates: avg error less than 1.000000e-13 on all three arrays
 -------------------------------------------------------------
+
 ```
