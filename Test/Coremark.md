@@ -65,20 +65,22 @@ $ sudo make
 ## 分析报告
 
 ```
-2K performance run parameters for coremark.	(Run type)
-CoreMark Size    	: 666					(Buffer size)
-Total ticks			: 25875					(platform dependent value)
-Total time (secs) 	: 25.875000				(actual time in seconds)
-Iterations/Sec 		: 3864.734300			(Performance value to report)
-Iterations			: 100000				(number of iterations used)
-Compiler version	: GCC3.4.4				(Compiler and version)	
-Compiler flags		: -O2					(Compiler and linker flags)
-Memory location		: Code in flash, data in on chip RAM
-seedcrc				: 0xe9f5				(identifier for the input seeds)
-[0]crclist			: 0xe714				(validation for list part)
-[0]crcmatrix		: 0x1fd7				(validation for matrix part)
-[0]crcstate			: 0x8e3a				(validation for state part)
-[0]crcfinal			: 0x33ff				(iteration dependent output)
-Correct operation validated. See README.md for run and reporting rules.  (*Only when run is successful*)
-CoreMark 1.0 : 6508.490622 / GCC3.4.4 -O2 / Heap 						  (*Only on a successful performance run*)
+2K performance run parameters for coremark.
+CoreMark Size    : 666
+Total ticks      : 12915
+Total time (secs): 12.915000
+Iterations/Sec   : 8517.228029
+Iterations       : 110000
+Compiler version : GCC13.1.0
+Compiler flags   : -O2 -DPERFORMANCE_RUN=1  -lrt
+Memory location  : Please put data memory location here
+			(e.g. code in flash, data on heap etc)
+seedcrc          : 0xe9f5
+[0]crclist       : 0xe714
+[0]crcmatrix     : 0x1fd7
+[0]crcstate      : 0x8e3a
+[0]crcfinal      : 0x33ff
+Correct operation validated. See README.md for run and reporting rules.
+CoreMark 1.0 : 8517.228029 / GCC13.1.0 -O2 -DPERFORMANCE_RUN=1  -lrt / Heap
+
 ```
