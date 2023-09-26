@@ -1,41 +1,40 @@
 # lmbench for Lpi4A
 
-## 软件版本
+## Software Version
 
 > lmbench for revyOS
 
-## 测试说明
+## Test Description
 
-| 带宽测评工具 | 反应时间测评工具 | 其他 |
+| Bandwidth Testing Tools | Response Time Testing Tools | Others |
 | --- | --- | --- |
-| 读取缓存文件 | 上下文切换 | \\ |
-| 拷贝内存 | 网络：连接的建立，管道，TCP，UDP 和RPC hot potato | \\ |
-| 读内存 | 文件系统的建立和删除 | \\ |
-| 写内存 | 进程创建 | 处理器时钟比率计算 |
-| 管道 | 信号处理 | \\ |
-| TCP | 上层的系统调用 | \\ |
-| \\ | 内存读入反应时间 | \\ |
+| Reading cache files | Context switching | \\ |
+| Memory copying | Networking: connection establishment, pipelines, TCP, UDP, and RPC hot potato | \\ |
+| Memory reading | File system creation and deletion | \\ |
+| Memory writing | Process creation | Processor clock rate calculation |
+| Pipelines | Signal handling | \\ |
+| TCP | High-level system calls | \\ |
+| \\ | Memory read response time | \\ |
 
-## 测试准备
+## Test Preparation
 
-下载测试工具：
+Download the testing tool:
 
 ```
 git clone https://github.com/revyos/lmbench3.git
 ```
 
-> 该版本为已为 RevyOS 移植版本。
+> This version has been ported for RevyOS.
 
-
-在开始测试前，需要先安装依赖：
+Before starting the test, install the dependencies:
 
 ```
 sudo apt install gcc make libntirpc-dev -y
 ```
 
-## 测试执行
+## Test Execution
 
-执行命令进行编译，配置，并测试
+Run the commands to compile, configure, and test:
 
 ```
 cd lmbench3
@@ -43,11 +42,11 @@ cd src
 make results
 ```
 
-编译完成后会有以下选项提示需要设置：
+After compiling, you will be prompted with various options to set:
 
-以下不需要更改的项目直接回车，会自动设置默认值。
+For options that don't need any changes, simply press enter, and default values will be used.
 
-`MULTIPLE COPIES [default 1]`: 设置同时运行 lmbench 的份数，份数多会使 lmbench 运行缓慢，默认是 1，这里设置为默认值 1。
+- **MULTIPLE COPIES [default 1]**: Determines the number of simultaneous runs of lmbench. More copies will slow down the run. Default is 1.
 
 ```
 =====================================================================
@@ -64,7 +63,7 @@ MULTIPLE COPIES [default 1]:
 =====================================================================
 ```
 
-`Job placement selection [default 1]`: 作业调度控制方法，默认值是 1，表示允许作业调度，这里设置为默认值。
+- **Job placement selection [default 1]**: Methods to control job placement. Default is to allow the scheduler to place jobs.
 
 ```
 =====================================================================
@@ -98,7 +97,7 @@ Job placement selection [default 1]:
 =====================================================================
 ```
 
-`Memory`: 设置测试内存大小，默认是 `$MB` , 即为程序计算出来的最大可测试内存，也可以手动定义测试值，这里设置为这里使用默认值。
+- **Memory**: Set the size of memory to test. Default is `$MB`, the program's calculated maximum testable memory size. It can also be manually set.
 
 ```
 =====================================================================
@@ -121,7 +120,7 @@ OK, it looks like your cache line is 64 bytes.
 =====================================================================
 ```
 
-`SUBSET (ALL|HARWARE|OS|DEVELOPMENT) [default all]`: 要运行的测试集，包含 `ALL/HARWARE/OS/DEVELOPMENT`，默认选 `all`，这里选 `all`。
+- **SUBSET (ALL|HARWARE|OS|DEVELOPMENT) [default all]**: The test subset to run. Default is "all".
 
 ```
 =====================================================================
@@ -140,7 +139,7 @@ SUBSET (ALL|HARWARE|OS|DEVELOPMENT) [default all]:
 =====================================================================
 ```
 
-`FASTMEM [default no]`: 内存 `latency` 测试，如果跳过该测试，则设置为 `yes`，如果不跳过则设置为 `no`，默认是 `no`，这里设置为默认值。
+- **FASTMEM [default no]**: Memory latency test. Default is "no".
 
 ```
 =====================================================================
@@ -159,7 +158,7 @@ FASTMEM [default no]:
 =====================================================================
 ```
 
-`SLOWFS [default no]`: 文件系统 `latency` 测试，如果跳过值设置为 `yes`，不跳过设置为 `no`，默认 `no`，这里设置为默认值。
+- **SLOWFS [default no]**: File system latency test. Default is "no".
 
 ```
 =====================================================================
@@ -178,7 +177,7 @@ SLOWFS [default no]:
 =====================================================================
 ```
 
-`DISKS [default none]`: 硬盘带宽和 `seek time`，需要设置测试硬盘的盘符，例如 `/dev/sda`，默认不测试(默认 none )，这里设置为默认值。
+- **DISKS [default none]**: Disk bandwidth and seek time test. Default is "none".
 
 ```
 =====================================================================
@@ -204,7 +203,7 @@ DISKS [default none]:
 =====================================================================
 ```
 
-`REMOTE [default none]`: 网络测试，需要 `2` 台机器并设置 `rsh`，是测试机器能 `rsh` 访问另一台，默认不测试(默认 none )，这里设置为默认值。
+- **REMOTE [default none]**: Networking test. Default is "none".
 
 ```
 =====================================================================
@@ -219,7 +218,7 @@ REMOTE [default none]:
 =====================================================================
 ```
 
-`Processor mhz [default 999 MHz, 1.0010 nanosec clock]`: 测试 `cpu`，默认 `$MHZ`，即为程序判断出的频率，也可以根据情况自己设定，例如 3500，单位 `MHz`，这里设置为默认值。
+- **Processor mhz [default 999 MHz, 1.0010 nanosec clock]**: Test CPU. Default is `$MHZ`.
 
 ```
 =====================================================================
@@ -242,7 +241,7 @@ Processor mhz [default 999 MHz, 1.0010 nanosec clock]:
 =====================================================================
 ```
 
-`FSDIR [default /usr/tmp]`: 临时目录用来存放测试文件，可以自己设定，默认 `/usr/tmp`，这里设置为默认值。
+- **FSDIR [default /usr/tmp]**: Temporary directory for test files. Default is `/usr/tmp`.
 
 ```
 =====================================================================
@@ -257,7 +256,7 @@ FSDIR [default /usr/tmp]:
 =====================================================================
 ```
 
-`Status output file [default /dev/tty]`: 测试输出信息文件存放目录，可以自己设定，默认 `/dev/tty`。
+- **Status output file [default /dev/tty]**: Test output information file directory. Default is `/dev/tty`.
 
 ```
 =====================================================================
@@ -270,7 +269,7 @@ Status output file [default /dev/tty]:
 =====================================================================
 ```
 
-`Mail results [default yes]`: 是否将测试结果邮件发出来，默认是 `yes`，这里设置为 `no`。
+- **Mail results [default yes]**: Whether or not to email test results. Default is "yes".
 
 ```
 =====================================================================
@@ -288,9 +287,10 @@ OK, no results mailed.
 =====================================================================
 ```
 
-以上项目设置完成后，开始自动执行测试。
+After setting the above, the test will run automatically.
 
-## 测试结果
+## Test Results
 
+(No results provided)
 
-## 测试说明
+## Test Notes

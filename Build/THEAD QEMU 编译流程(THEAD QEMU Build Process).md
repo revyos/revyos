@@ -1,4 +1,4 @@
-C910V强制cpu指定补丁
+C910V强制cpu指定补丁(C910V forcibly specifies CPU patch)
 
 ```patch
 From 5164bca5a4bcde4534dc1a9aa3a7f619719874cf Mon Sep 17 00:00:00 2001
@@ -27,7 +27,7 @@ index 9dd65652ee45..3195cfa71408 100644
  #endif
 ```
 
-编译流程
+编译流程(Build process)
 
 ```bash
 ./configure \
