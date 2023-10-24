@@ -39,3 +39,4 @@ For adaptation-related documentation: [Click here](https://github.com/ruyisdk/re
 
 For testing-related documentation: [Click here](https://github.com/ruyisdk/revyos/tree/main/Test).
 
+For TH1520 User Manual: [Click here](https://xuantie.t-head.cn/product/wujian/4080405462988689408)
