@@ -1,47 +1,46 @@
 # RevyOS
 
-## 简介
+## Introduction
 
-[RevyOS](https://github.com/orgs/revyos/repositories)是由如意SDK团队的RevyOS小队支持开发的一款针对T-Head芯片生态的Debian优化定制发行版。
+[RevyOS](https://github.com/revyos)  is a custom Debian distribution optimized for the T-Head chip ecosystem, supported and developed by the RevyOS team from the [Ruyi SDK](https://github.com/ruyisdk) team.
 
-__RevyOS__ 围绕 c906fdv/c910v/c908 等芯片提供了完整而全面的适配和优化支持，默认集成支持 RVV0.7.1和 XThead 的 GCC 工具链，并搭载使用 RVV0.7.1指令集优化过的 glibc 和 kernel。
+RevyOS provides comprehensive adaptation and optimization support for chips such as c906fdv, c910v, and c908. By default, it integrates support for the RVV0.7.1 and XThead GCC toolchains. Furthermore, it is equipped with glibc and kernel optimized for the RVV0.7.1 instruction set.
 
-目前，__RevyOS__ 在办公、网页浏览、观看视频等方面已经能满足用户的基本使用需求。
+Currently, RevyOS meets basic user needs in areas like office tasks, web browsing, and video playback.
 
-基于上述定制和优化的 __RevyOS__，在 Lichee RV，Lichee Pi 4A 等硬件平台上，能够提供优秀的性能和极佳的体验。
+Thanks to its customizations and optimizations, RevyOS offers superior performance and an excellent experience on hardware platforms like Lichee RV and Lichee Pi 4A.
 
-## 镜像下载及刷写
+## Image Download and Installation
 
-__RevyOS__ 的Lichee Pi 4A用户版镜像目前在 ISCAS（中国科学院软件研究所） 开源镜像站进行更新。如您想获取 __RevyOS__ 最新版镜像请访问：[镜像下载](https://mirror.iscas.ac.cn/revyos/extra/images/lpi4a/)
+The user image of RevyOS for Lichee Pi 4A is currently being updated on the open-source mirror site of [ISCAS (Institute of Software, Chinese Academy of Sciences)](https://mirror.iscas.ac.cn/revyos). To obtain the latest version of the RevyOS image, please visit: [Image Download](https://mirror.iscas.ac.cn/revyos/extra/images/lpi4a/).
 
-镜像刷写请参考：[镜像刷写教程](https://wiki.sipeed.com/hardware/zh/lichee/th1520/lpi4a/4_burn_image.html#%E6%89%B9%E9%87%8F%E7%83%A7%E5%BD%95)
+For instructions on installing the image, please refer to: [Image Installation Guide](https://wiki.sipeed.com/hardware/zh/lichee/th1520/lpi4a/4_burn_image.html#%E6%89%B9%E9%87%8F%E7%83%A7%E5%BD%95).
 
-__RevyOS__ 最新版镜像为 20230916 版本，本版本下载链接为：[RevyOS 0916版本下载](https://mirror.iscas.ac.cn/revyos/extra/images/lpi4a/20230916/)
+The latest image version of RevyOS is the 20231026 edition. The download link for this version is: [RevyOS 0916 Version Download](https://mirror.iscas.ac.cn/revyos/extra/images/lpi4a/20231026/).
 
-本链接内包含 U-boot、boot以及 root 文件，刷写方式请参考[镜像刷写教程](https://wiki.sipeed.com/hardware/zh/lichee/th1520/lpi4a/4_burn_image.html#%E6%89%B9%E9%87%8F%E7%83%A7%E5%BD%95)。
+The provided link contains the U-boot, boot, and root files. For installation methods, please refer to the [Image Installation Guide](https://wiki.sipeed.com/hardware/zh/lichee/th1520/lpi4a/4_burn_image.html#%E6%89%B9%E9%87%8F%E7%83%A7%E5%BD%95).
 
-在完成镜像刷写后用户在登录界面，输入用户名 `debian`，密码 `debian` 就可以登录进入系统了。
+Once the image installation is complete, users can log in using the username "debian" and the password "debian".
 
-## 更新内容
+## Updates and Announcements
 
-镜像版本更新后我们会公布当前版本镜像支持内容，如您想查看镜像支持内容请点击[RevyOS版本更新日志](./Change%20Log/)后选择您所需要的版本进行查看。
+After an image version update, we will announce the features and changes supported by the current version. If you wish to view the contents supported by the image, click on [RevyOS Version ChangeLog](https://github.com/ruyisdk/revyos/tree/main/Change%20Log) and select the version you're interested in.
 
-## issue相关
+## Issues
 
-如果您在使用过程中遇到问题，可以进行[issue申报](https://github.com/revyos/revyos/issues)。
+If you encounter any issues while using the system, you can [submit an issue](https://github.com/revyos/revyos/issues).
 
-## 用户文档
+User Documentation
+In this repository, we offer various user guides, including documentation on system building, adaptation, and testing. This comprehensive documentation helps users get acquainted with the system more quickly.
 
-在本仓库中，我们拥有相关的使用构建与适配文档以及测试文档方便让用户对部分内容进行参考，完善的文档支持加快了用户对于系统的上手时间。
+For compile and build documentation: [Click here](https://github.com/ruyisdk/revyos/tree/main/Build)
 
-编译与构建相关文档：[点击此处](./Build/)
+For adaptation-related documentation: [Click here](https://github.com/ruyisdk/revyos/tree/main/Adaptation)
 
-适配相关文档：[点击此处](./Adaptation/)
+For testing-related documentation: [Click here](https://github.com/ruyisdk/revyos/tree/main/Test).
 
-测试相关文档：[点击此处](./Test/)
+For 玄铁曳影1520芯片原型用户手册_CN：[Click here](https://occ-oss-prod.oss-cn-hangzhou.aliyuncs.com/resource//1697208997919/%E7%8E%84%E9%93%81%E6%9B%B3%E5%BD%B11520%E8%8A%AF%E7%89%87%E5%8E%9F%E5%9E%8B%E7%94%A8%E6%88%B7%E6%89%8B%E5%86%8C_CN.zip)
 
-玄铁曳影1520芯片原型用户手册_CN：[点击此处](https://occ-oss-prod.oss-cn-hangzhou.aliyuncs.com/resource//1697208997919/%E7%8E%84%E9%93%81%E6%9B%B3%E5%BD%B11520%E8%8A%AF%E7%89%87%E5%8E%9F%E5%9E%8B%E7%94%A8%E6%88%B7%E6%89%8B%E5%86%8C_CN.zip)
+For TH1520 User Manual_EN：[Click here](https://occ-oss-prod.oss-cn-hangzhou.aliyuncs.com/resource/889768/1697171362880/TH1520%20User%20Manual.zip)
 
-TH1520 User Manual_EN：[点击此处](https://occ-oss-prod.oss-cn-hangzhou.aliyuncs.com/resource/889768/1697171362880/TH1520%20User%20Manual.zip)
-
-曳影1520规格书V1.03: [点击此处](https://occ-oss-prod.oss-cn-hangzhou.aliyuncs.com/resource/889768/1698042403122/%E6%9B%B3%E5%BD%B11520%E8%A7%84%E6%A0%BC%E4%B9%A6V1.03.pdf)
+For TH1520 Specifications V1.03: [Click here](https://occ-oss-prod.oss-cn-hangzhou.aliyuncs.com/resource/889768/1698042403122/%E6%9B%B3%E5%BD%B11520%E8%A7%84%E6%A0%BC%E4%B9%A6V1.03.pdf)
