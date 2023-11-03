@@ -16,7 +16,7 @@ The user image of RevyOS for Lichee Pi 4A is currently being updated on the open
 
 For instructions on installing the image, please refer to: [Image Installation Guide](https://wiki.sipeed.com/hardware/zh/lichee/th1520/lpi4a/4_burn_image.html#%E6%89%B9%E9%87%8F%E7%83%A7%E5%BD%95).
 
-The latest image version of RevyOS is the 20231026 edition. The download link for this version is: [RevyOS 0916 Version Download](https://mirror.iscas.ac.cn/revyos/extra/images/lpi4a/20231026/).
+The latest image version of RevyOS is the 20231026 edition. The download link for this version is: [RevyOS 1026 Version Download](https://mirror.iscas.ac.cn/revyos/extra/images/lpi4a/20231026/).
 
 The provided link contains the U-boot, boot, and root files. For installation methods, please refer to the [Image Installation Guide](https://wiki.sipeed.com/hardware/zh/lichee/th1520/lpi4a/4_burn_image.html#%E6%89%B9%E9%87%8F%E7%83%A7%E5%BD%95).
 
