@@ -123,8 +123,6 @@ EOF
 
 如果要获取 RevyOS 特定版本的内核模块，可进入 [revyos/thead-kernel](https://github.com/revyos/thead-kernel) ，并在 GitHub CI 中下载 artifacts
 
-
-
 ### 2. 安装 vpu-omxil 并调整配置
 
 首先，请将 vpu-omxil 下载并解压到 /usr/lib/omxil/中
@@ -166,8 +164,6 @@ cat /var/lib/libomxil-bellagio0/registry
 /usr/lib/riscv64-linux-gnu/libomxil-bellagio0/libOMX.hantro.VC8000D.video.decoder.so
  ==> OMX.hantro.VC8000D.video.decoder ==> OMX.hantro.VC8000D.video.decoder.mpeg4:OMX.hantro.VC8000D.video.decoder.avc:OMX.hantro.VC8000D.video.decoder.avs:OMX.hantro.VC8000D.video.decoder.h263:OMX.hantro.VC8000D.video.decoder.wmv:OMX.hantro.VC8000D.video.decoder.vp6:OMX.hantro.VC8000D.video.decoder.vp8:OMX.hantro.VC8000D.video.decoder.jpeg:OMX.hantro.VC8000D.video.decoder.hevc:OMX.hantro.VC8000D.video.decoder.vp9:OMX.hantro.VC8000D.video.decoder.avs2:
 ```
-
-
 
 #### 2.2 调整 gstomx.conf 的设置
 
