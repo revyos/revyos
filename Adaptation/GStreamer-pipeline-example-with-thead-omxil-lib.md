@@ -109,16 +109,22 @@ gst-launch-1.0 filesrc location=blade.mp3 ! mpegaudioparse ! avdec_mp3 ! audioco
 
 # aac decode
 gst-launch-1.0 filesrc location=blade.aac ! aacparse ! avdec_aac ! audioconvert ! autoaudiosink
+gst-launch-1.0 filesrc location=blade.aac ! aacparse ! faad ! audioconvert ! autoaudiosink
+## faad works well without aacparse
+gst-launch-1.0 filesrc location=blade.aac ! faad ! audioconvert ! autoaudiosink
 
 # opus decode
-## todo: opusparser stuck in prerolling stage
- gst-launch-1.0 filesrc location=blade.opus ! opusparse ! opusdec ! audioconvert ! autoaudiosink
+## opus file must be processed by oggdemux first
+gst-launch-1.0 filesrc location=blade.opus ! oggdemux ! opusparse ! opusdec ! audioconvert ! autoaudiosink
+gst-launch-1.0 filesrc location=blade.opus ! oggdemux ! opusparse ! avdec_opus ! audioconvert ! autoaudiosink
 
 # use specific audiosink
 gst-launch-1.0 filesrc location=blade.mp3 ! decodebin ! audioconvert ! pulsesink
 
 # specify the output device by using alsasink with device property
 gst-launch-1.0 filesrc location=blade.mp3 ! decodebin ! audioconvert ! alsasink device=hw:0,2
+
+# todo:add pcm decode
 ```
 
 #### demux and decode
@@ -130,7 +136,7 @@ gst-launch-1.0 filesrc location=fire.mp4 ! qtdemux name=demux \
   demux.audio_0 ! queue ! decodebin ! audioconvert !  autoaudiosink
 ```
 
-### Encode
+### Encode to file
 
 #### Video encode
 
@@ -177,7 +183,22 @@ gst-launch-1.0 v4l2src device=/dev/video0 ! videoconvert \
 ```shell
 # There is no hardware audio encoder on th1520
 
-# todo: add software audio encode examples
+# encode aac stream with adts container(.aac file)
+## the unit of the bitrate is 'bit/sec'
+gst-launch-1.0 audiotestsrc ! voaacenc bitrate=128000 ! avmux_adts ! filesink location=test.aac
+
+
+# todo: encode aac stream with adif container(.m4a file)
+
+# encode to mp3 file
+## the unit of the bitrate is 'kbit/sec'
+gst-launch-1.0 audiotestsrc ! lamemp3enc quality=2 target=bitrate bitrate=192 cbr=true ! id3v2mux ! filesink location=test.mp3
+
+# encode opus stream to .ogg file
+gst-launch-1.0 audiotestsrc ! opusenc ! oggmux ! filesink location=test.opus
+
+
+# todo: encode pcm stream to .wav file
 ```
 
 #### mux and encode
@@ -190,6 +211,10 @@ gst-launch-1.0 audiotestsrc ! autoaudiosink videotestsrc ! autovideosink
 ```
 
 ### Media transcode
+
+#### Video transcode
+
+#### Audio transcode
 
 ### Video scalling
 
@@ -259,7 +284,7 @@ There are two ways to achieve this goal. One is setting **environment variable**
 In most video decoding cases, there is a video-stream and an audio stream. We need to use **demuxer** to seperate them. Demuxer usually have several src pad. Here is an example.
 
 ```shell
-gst-launch-1.0 filesrc location=test-video.mp4 ! qtdemux name=demux demux. ! queue ! h264parse ! omxh264dec ! glimagesink demux. ! queue ! aacparsaacparse ! avdec_aac ! audioconvert !  alsasink
+gst-launch-1.0 filesrc location=test-video.mp4 ! qtdemux name=demux demux. ! queue ! h264parse ! omxh264dec ! glimagesink demux. ! queue ! aacparse ! avdec_aac ! audioconvert !  alsasink
 ```
 
 It is hard to read. Add some word wrap:
@@ -294,3 +319,5 @@ We negotiated the pad properties between `videotestsrc` and `glimagesink`. The p
 4. [How to display fps of streaming video in gsteramer? - StackOverflow](https://stackoverflow.com/questions/73948308/)
 5. [Storing AAC Audio and Retrieving - StackOverflow](https://stackoverflow.com/questions/37496912)
 6. [Accelerated GStreamer User Guide - NVIDIA](https://developer.download.nvidia.com/embedded/L4T/r32_Release_v1.0/Docs/Accelerated_GStreamer_User_Guide.pdf)
+7. [Storing AAC Audio and Retrieving - StackOverflow](https://stackoverflow.com/questions/37496912)
+8. [Play an opus file with gstreamer and pulseaudio - StackOverflow](https://stackoverflow.com/questions/70672729)
