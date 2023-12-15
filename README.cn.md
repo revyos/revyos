@@ -42,6 +42,6 @@ __RevyOS__ 最新版镜像为 20231210 版本，本版本下载链接为：[Revy
 
 玄铁曳影1520芯片原型用户手册_CN：[点击此处](https://occ-oss-prod.oss-cn-hangzhou.aliyuncs.com/resource//1697208997919/%E7%8E%84%E9%93%81%E6%9B%B3%E5%BD%B11520%E8%8A%AF%E7%89%87%E5%8E%9F%E5%9E%8B%E7%94%A8%E6%88%B7%E6%89%8B%E5%86%8C_CN.zip)
 
-TH1520 User Manual_EN：[点击此处](https://occ-oss-prod.oss-cn-hangzhou.aliyuncs.com/resource/889768/1697171362880/TH1520%20User%20Manual.zip)
+TH1520 User Manual_EN：[点击此处](https://occ-intl-prod.oss-ap-southeast-1.aliyuncs.com/resource//1698839996662/TH1520%20User%20Manual%20(1).zip)
 
 曳影1520规格书V1.03: [点击此处](https://occ-oss-prod.oss-cn-hangzhou.aliyuncs.com/resource/889768/1698042403122/%E6%9B%B3%E5%BD%B11520%E8%A7%84%E6%A0%BC%E4%B9%A6V1.03.pdf)
