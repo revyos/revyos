@@ -16,7 +16,7 @@ The user image of RevyOS for Lichee Pi 4A is currently being updated on the open
 
 For instructions on installing the image, please refer to: [Image Installation Guide](https://wiki.sipeed.com/hardware/zh/lichee/th1520/lpi4a/4_burn_image.html#%E6%89%B9%E9%87%8F%E7%83%A7%E5%BD%95).
 
-The latest image version of RevyOS is the 20231026 edition. The download link for this version is: [RevyOS 1026 Version Download](https://mirror.iscas.ac.cn/revyos/extra/images/lpi4a/20231026/).
+The latest image version of RevyOS is the 20231210 edition. The download link for this version is: [RevyOS 1210 Version Download](https://mirror.iscas.ac.cn/revyos/extra/images/lpi4a/20231210/).
 
 The provided link contains the U-boot, boot, and root files. For installation methods, please refer to the [Image Installation Guide](https://wiki.sipeed.com/hardware/zh/lichee/th1520/lpi4a/4_burn_image.html#%E6%89%B9%E9%87%8F%E7%83%A7%E5%BD%95).
 
@@ -41,6 +41,7 @@ For testing-related documentation: [Click here](https://github.com/ruyisdk/revyo
 
 For 玄铁曳影1520芯片原型用户手册_CN：[Click here](https://occ-oss-prod.oss-cn-hangzhou.aliyuncs.com/resource//1697208997919/%E7%8E%84%E9%93%81%E6%9B%B3%E5%BD%B11520%E8%8A%AF%E7%89%87%E5%8E%9F%E5%9E%8B%E7%94%A8%E6%88%B7%E6%89%8B%E5%86%8C_CN.zip)
 
-For TH1520 User Manual_EN：[Click here](https://occ-oss-prod.oss-cn-hangzhou.aliyuncs.com/resource/889768/1697171362880/TH1520%20User%20Manual.zip)
+For TH1520 User Manual_EN：[Click here](https://occ-intl-prod.oss-ap-southeast-1.aliyuncs.com/resource//1698839996662/TH1520%20User%20Manual%20(1).zip)
 
 For TH1520 Specifications V1.03: [Click here](https://occ-oss-prod.oss-cn-hangzhou.aliyuncs.com/resource/889768/1698042403122/%E6%9B%B3%E5%BD%B11520%E8%A7%84%E6%A0%BC%E4%B9%A6V1.03.pdf)
+https://occ-intl-prod.oss-ap-southeast-1.aliyuncs.com/resource//1698839996662/TH1520%20User%20Manual%20(1).zip
