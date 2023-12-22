@@ -47,15 +47,17 @@ make CROSS_COMPILE=riscv64-unknown-linux-gnu- ARCH=riscv revyos_defconfig
 make CROSS_COMPILE=riscv64-unknown-linux-gnu- ARCH=riscv -j$(nproc)
 make CROSS_COMPILE=riscv64-unknown-linux-gnu- ARCH=riscv -j$(nproc) dtbs
 sudo make CROSS_COMPILE=riscv64-unknown-linux-gnu- ARCH=riscv INSTALL_MOD_PATH=../rootfs/ modules_install -j$(nproc)
-sudo make CROSS_COMPILE=riscv64-unknown-linux-gnu- ARCH=riscv INSTALL_PATH=../rootfs/boot zinstall -j$(nproc)
+sudo make CROSS_COMPILE=riscv64-unknown-linux-gnu- ARCH=riscv INSTALL_PATH=../rootfs/boot install -j$(nproc)
 # 构建perf（如果需要的话）
 make CROSS_COMPILE=riscv64-unknown-linux-gnu- ARCH=riscv LDFLAGS=-static NO_LIBELF=1 NO_JVMTI=1 VF=1 -C tools/perf/
 sudo cp -v tools/perf/perf ../rootfs/sbin/perf-thead
 # 安装内核到安装目标目录
 sudo cp -v arch/riscv/boot/Image ../rootfs/boot/
 # 安装设备树到安装目标目录
-sudo cp -v arch/riscv/boot/dts/thead/light-lpi4a.dtb ../rootfs/boot/
-sudo cp -v arch/riscv/boot/dts/thead/light-lpi4a-dsi0-hdmi.dtb ../rootfs/boot/
+# 用于lpi4a（8G核心板）开发板：
+sudo cp -v arch/riscv/boot/dts/thead/light-lpi4a.dts ../rootfs/boot/
+# 用于lpi4a（16G核心板）开发板：
+sudo cp -v arch/riscv/boot/dts/thead/light-lpi4a-16gb.dts ../rootfs/boot/
 ```
 
 之后只需要把rootfs中内容拷贝或覆盖到对应目录即可，注意内核Image和内核module目录一定要对应，不然会因缺失内核模块导致外设功能失效。
@@ -109,15 +111,17 @@ make CROSS_COMPILE=riscv64-unknown-linux-gnu- ARCH=riscv revyos_defconfig
 make CROSS_COMPILE=riscv64-unknown-linux-gnu- ARCH=riscv -j$(nproc)
 make CROSS_COMPILE=riscv64-unknown-linux-gnu- ARCH=riscv -j$(nproc) dtbs
 sudo make CROSS_COMPILE=riscv64-unknown-linux-gnu- ARCH=riscv INSTALL_MOD_PATH=../rootfs/ modules_install -j$(nproc)
-sudo make CROSS_COMPILE=riscv64-unknown-linux-gnu- ARCH=riscv INSTALL_PATH=../rootfs/boot zinstall -j$(nproc)
+sudo make CROSS_COMPILE=riscv64-unknown-linux-gnu- ARCH=riscv INSTALL_PATH=../rootfs/boot install -j$(nproc)
 # build perf (if needed)
 make CROSS_COMPILE=riscv64-unknown-linux-gnu- ARCH=riscv LDFLAGS=-static NO_LIBELF=1 NO_JVMTI=1 VF=1 -C tools/perf/
 sudo cp -v tools/perf/perf ../rootfs/sbin/perf-thead
 # Install Kernel
 sudo cp -v arch/riscv/boot/Image ../rootfs/boot/
 # Install DTB
-sudo cp -v arch/riscv/boot/dts/thead/light-lpi4a.dtb ../rootfs/boot/
-sudo cp -v arch/riscv/boot/dts/thead/light-lpi4a-dsi0-hdmi.dtb ../rootfs/boot/
+# For lpi4a(8G) board：
+sudo cp -v arch/riscv/boot/dts/thead/light-lpi4a.dts ../rootfs/boot/
+# For lpi4a(16G) board：
+sudo cp -v arch/riscv/boot/dts/thead/light-lpi4a-16gb.dts ../rootfs/boot/
 ```
 
 After all build steps, you can copy or override kernel and module files on your board using files in "rootfs", If you replace kernel with new one please make sure you also replace with corresponding kernel module folder.
