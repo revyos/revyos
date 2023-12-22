@@ -109,10 +109,17 @@ gst-launch-1.0 filesrc location=blade.mp3 ! mpegaudioparse ! avdec_mp3 ! audioco
 
 # aac decode
 gst-launch-1.0 filesrc location=blade.aac ! aacparse ! avdec_aac ! audioconvert ! autoaudiosink
+gst-launch-1.0 filesrc location=blade.aac ! aacparse ! faad ! audioconvert ! autoaudiosink
+## faad works well without aacparse
+gst-launch-1.0 filesrc location=blade.aac ! faad ! audioconvert ! autoaudiosink
 
 # opus decode
-## todo: opusparser stuck in prerolling stage
- gst-launch-1.0 filesrc location=blade.opus ! opusparse ! opusdec ! audioconvert ! autoaudiosink
+## ogg file must be demuxed by oggdemux first
+gst-launch-1.0 filesrc location=blade.ogg ! oggdemux ! opusparse ! opusdec ! audioconvert ! autoaudiosink
+gst-launch-1.0 filesrc location=blade.ogg ! oggdemux ! opusparse ! avdec_opus ! audioconvert ! autoaudiosink
+
+# wav decode
+gst-launch-1.0 filesrc location=test.wav ! wavparse ! audioresample ! audioconvert ! autoaudiosink
 
 # use specific audiosink
 gst-launch-1.0 filesrc location=blade.mp3 ! decodebin ! audioconvert ! pulsesink
@@ -123,6 +130,8 @@ gst-launch-1.0 filesrc location=blade.mp3 ! decodebin ! audioconvert ! alsasink 
 
 #### demux and decode
 
+We play media file in this section.
+
 ```shell
 # play mp4 file with both audio and video
 gst-launch-1.0 filesrc location=fire.mp4 ! qtdemux name=demux \
@@ -130,29 +139,29 @@ gst-launch-1.0 filesrc location=fire.mp4 ! qtdemux name=demux \
   demux.audio_0 ! queue ! decodebin ! audioconvert !  autoaudiosink
 ```
 
-### Encode
+### Encode to file
 
 #### Video encode
 
 ```shell
 # h264 encode test
 # before import video stream to omxh264dec, data should be transformed to frame with rawvideoparse
-# property and pad of rawvideoparse should be set to the same
+# property and pad of rawvideoparse should be set to the same, so we use 'use-sink-caps=true' here
 gst-launch-1.0 videotestsrc ! videoconvert \
   ! video/x-raw, format=NV12, width=640, height=480 \
-  ! rawvideoparse format=nv12 width=640 height=480 ! omxh264enc ! fakesink
+  ! rawvideoparse use-sink-caps=true ! omxh264enc ! fakesink
 
 # h264 hardware encode to file
 ## todo: encoded h264 file has seek problem
 gst-launch-1.0 videotestsrc ! videoconvert \
   ! video/x-raw, format=NV12, width=640, height=480 \
-  ! rawvideoparse format=nv12 width=640 height=480 ! omxh264enc \
+  ! rawvideoparse use-sink-caps=true ! omxh264enc \
   ! h264parse ! qtmux ! mp4mux ! filesink location=test.mp4
 
 # h264 hardware encode to file with specific bitrate(bit per second)
 gst-launch-1.0 videotestsrc ! videoconvert \
   ! video/x-raw, format=NV12, width=640, height=480 \
-  ! rawvideoparse format=nv12 width=640 height=480  \
+  ! rawvideoparse use-sink-caps=true  \
   ! omxh264enc target-bitrate=3000000 \
   ! h264parse ! filesink location=test.mp4
 
@@ -160,15 +169,15 @@ gst-launch-1.0 videotestsrc ! videoconvert \
 # h265 hardware encode to file
 ## this pipeline produces h265 stream only
 ## qtdemux is not needed while decoding
- gst-launch-1.0 videotestsrc ! videoconvert \
+gst-launch-1.0 videotestsrc ! videoconvert \
   ! video/x-raw, format=NV12, width=640, height=480 \
-  ! rawvideoparse format=nv12 width=640 height=480 ! omxh265enc \
+  ! rawvideoparse use-sink-caps=true ! omxh265enc \
   ! h265parse ! filesink location=test.h265
 
 # h264 hardware encode from camera to file
 gst-launch-1.0 v4l2src device=/dev/video0 ! videoconvert \
   ! video/x-raw, format=NV12,width=640,height=480 \
-  ! rawvideoparse format=nv12 width=640 height=480 \
+  ! rawvideoparse use-sink-caps=true \
   ! omxh264enc ! h264parse ! filesink location=test.mp4 -e
 ```
 
@@ -177,25 +186,121 @@ gst-launch-1.0 v4l2src device=/dev/video0 ! videoconvert \
 ```shell
 # There is no hardware audio encoder on th1520
 
-# todo: add software audio encode examples
+# encode aac stream with adts container(.aac file)
+## the unit of the bitrate is 'bit/sec'
+gst-launch-1.0 audiotestsrc ! voaacenc bitrate=128000 ! avmux_adts ! filesink location=test.aac
+
+
+# todo: encode aac stream with adif container(.m4a file)
+
+# encode to mp3 file
+## the unit of the bitrate is 'kbit/sec'
+gst-launch-1.0 audiotestsrc ! lamemp3enc quality=2 target=bitrate bitrate=192 cbr=true ! id3v2mux ! filesink location=test.mp3
+
+# encode opus stream to .ogg file
+gst-launch-1.0 audiotestsrc ! opusenc ! oggmux ! filesink location=test.opus
+
+
+# todo: encode pcm stream to .wav file
 ```
 
 #### mux and encode
+
+This part has been removed to `Video + audio transcode` section.
+
+### Media file transcode
+
+#### Video transcode
+
+Since `omx...dec` cannot fulfill qtdemux and mp4mux, and gst-omx is no longer maintained, it is hard to mux mp4 file with these two plugins. To mux stream from omxh264dec, use `avmux_mp4` instead. But there is no h265 or vp9 muxer available for `omx...dec`
+
+The raw video stream should be processed by `rawvideoparse` before sent to encoder. Because  itself cannot scale frame or change framerate, `rawvideoparse` need to get the stream info of its sink pad(src pad of the backward element). Therefore `use-sink-caps` must be set to `true`.
+
+To change width and height, set properties `output-width` and `output-height` of `omx...dec`. To modify bitrate and bitrate control method, set properties `control-rate` and `target-bitrate` of `omx...enc`. To change framerate, set properties of `videorate`.
+
+```shell
+# h265 to h264
+gst-launch-1.0 filesrc location=test_h265.mp4 ! qtdemux ! h265parse ! omxh265dec \
+  ! rawvideoparse use-sink-caps=true \
+  ! omxh264enc ! h264parse ! avmux_mp4 ! filesink location=t_h264.mp4
+
+# vp9 to h264
+gst-launch-1.0 filesrc location=test_vp9.webm ! matroskademux ! omxvp9dec \
+  ! rawvideoparse use-sink-caps=true \
+  ! omxh264enc ! h264parse ! avmux_mp4 ! filesink location=t_h264.mp4
+
+# arbitrary input to h264
+gst-launch-1.0 filesrc location=test_h264.mp4 ! decodebin \
+  ! rawvideoparse use-sink-caps=true \
+  ! omxh264enc ! h264parse ! filesink location=t_h264.mp4
+
+# h264 to h264, with more options
+## set the video width and height to 1280×720, framerate to 15fps, bitrate mode to constant and bitrate to 5Mbps
+gst-launch-1.0 filesrc location=test_h264.mp4 ! qtdemux ! h264parse \
+  ! omxh264dec output-width=1280 output-height=720 \
+  ! videorate ! video/x-raw, framerate=15/1 \
+  ! rawvideoparse use-sink-caps=true  \
+  ! omxh264enc control-rate=constant target-bitrate=5000000 ! h264parse ! filesink location=t_h264.mp4
+
+## there is no vp9 encoder in th1520 omxil lib
+```
+
+#### Audio transcode
+
+```shell
+# aac to mp3
+gst-launch-1.0 filesrc location=test.aac ! aacparse ! avdec_aac ! audioconvert ! lamemp3enc quality=2 target=bitrate bitrate=192 cbr=true ! id3v2mux ! filesink location=t.mp3
+
+# mp3 to aac
+gst-launch-1.0 filesrc location=test.mp3 ! mpegaudioparse ! avdec_mp3 ! audioconvert ! voaacenc bitrate=128000 ! avmux_adts ! filesink location=t.aac
+
+# wav to mp3
+gst-launch-1.0 filesrc location=test.wav ! wavparse ! audioresample ! audioconvert ! lamemp3enc quality=2 target=bitrate bitrate=192 cbr=true ! id3v2mux ! filesink location=t.mp3
+
+# mp3 to wav
+gst-launch-1.0 filesrc location=test.mp3 ! mpegaudioparse ! avdec_mp3 ! audioresample ! audioconvert \
+  ! audio/x-raw, rate=44100, format=S16LE ! wavenc ! filesink location=t.wav
+```
+
+#### Video + audio remux and transcode
 
 ```shell
 # mux test
 gst-launch-1.0 audiotestsrc ! autoaudiosink videotestsrc ! autovideosink
 
-# todo: there is some problem with qtmux and mp4mux,
+# mux the test video and audio stream to a mp4 file
+## be aware that '-e' must be set to this pipeline,
+## and there is no '!' before audiotestsrc
+gst-launch-1.0 -e videotestsrc ! videoconvert \
+  ! video/x-raw, format=NV12, width=960, height=540 \
+  ! rawvideoparse use-sink-caps=true ! omxh264enc ! h264parse \
+  ! avmux_mp4 name=mux ! filesink location=t_h264.mp4 \
+  audiotestsrc ! lamemp3enc ! mux.
+
+# change container from mkv to mp4 with h264 stream
+## this means demux a mkv file then mux video and audio stream to mp4 file
+gst-launch-1.0 filesrc location=test_h264.mkv \
+  ! matroskademux name=demux mp4mux force-create-timecode-trak=true name=mux ! filesink location=t_h264.mp4 \
+  demux.video_0 ! queue ! video/x-h264 ! mux. \
+  demux.audio_0 ! queue ! audio/mpeg ! mux.
 ```
-
-### Media transcode
-
-### Video scalling
 
 ### Media mixing
 
 ### Camera capture
+
+You can use command `v4l2-ctl`, which is included in package `v4l-utils` to get information of your camera.
+
+For more information, read [this article](https://archive.md/nlyBK)
+
+```shell
+# h264 hardware encode from camera to file
+gst-launch-1.0 v4l2src device=/dev/video0 ! videoconvert \
+  ! video/x-raw, format=NV12,width=640,height=480 \
+  ! rawvideoparse format=nv12 width=640 height=480 \
+  ! omxh264enc ! h264parse ! filesink location=test.mp4 -e
+
+```
 
 ### Stream transfer
 
@@ -203,15 +308,37 @@ gst-launch-1.0 audiotestsrc ! autoaudiosink videotestsrc ! autovideosink
 
 #### gst-inspect-1.0
 
-`gst-inspec-1.0` is a tool to print info about a GStreamer plugin or element.
+`gst-inspect-1.0` is a tool to print info about a GStreamer element(factory), which is included in `gstreamer1.0-tools`.
 
-included in `gstreamer1.0-tools`.
+```shell
+# print the GStreamer element list with a 'less' like paing filter.
+gst-inspect-1.0
+
+# print info of the element
+gst-inspect-1.0 <element_name>
+```
 
 #### gst-discover1.0
 
-`gst-discover-1.0` is inclucded in `gstreamer1.0-plugins-base-apps`.
+`gst-discover-1.0` is a tool to show info about the media file, which is inclucded in `gstreamer1.0-plugins-base-apps`.
+
+```shell
+gst-discoverer-1.0 -v test.mp4
+```
 
 #### gst-play-1.0
+
+If you are tired of manually build pipeline for playback by hand. You can use `gst-play-1.0` as an alternative, which is included in `gstreamer1.0-plugins-base-apps`.
+
+```shell
+# play media file
+gst-play-1.0 test.mp4
+
+# play media file with specific sink
+gst-play-1.0 --videosink=glimagesink --audiosink=alsasink
+```
+
+Left button and right button can be used to seek. For more info, please read [this article](https://manpages.ubuntu.com/manpages/xenial/man1/gst-play-1.0.1.html).
 
 ### Other examples
 
@@ -259,7 +386,7 @@ There are two ways to achieve this goal. One is setting **environment variable**
 In most video decoding cases, there is a video-stream and an audio stream. We need to use **demuxer** to seperate them. Demuxer usually have several src pad. Here is an example.
 
 ```shell
-gst-launch-1.0 filesrc location=test-video.mp4 ! qtdemux name=demux demux. ! queue ! h264parse ! omxh264dec ! glimagesink demux. ! queue ! aacparsaacparse ! avdec_aac ! audioconvert !  alsasink
+gst-launch-1.0 filesrc location=test-video.mp4 ! qtdemux name=demux demux. ! queue ! h264parse ! omxh264dec ! glimagesink demux. ! queue ! aacparse ! avdec_aac ! audioconvert !  alsasink
 ```
 
 It is hard to read. Add some word wrap:
@@ -294,3 +421,8 @@ We negotiated the pad properties between `videotestsrc` and `glimagesink`. The p
 4. [How to display fps of streaming video in gsteramer? - StackOverflow](https://stackoverflow.com/questions/73948308/)
 5. [Storing AAC Audio and Retrieving - StackOverflow](https://stackoverflow.com/questions/37496912)
 6. [Accelerated GStreamer User Guide - NVIDIA](https://developer.download.nvidia.com/embedded/L4T/r32_Release_v1.0/Docs/Accelerated_GStreamer_User_Guide.pdf)
+7. [Storing AAC Audio and Retrieving - StackOverflow](https://stackoverflow.com/questions/37496912)
+8. [Play an opus file with gstreamer and pulseaudio - StackOverflow](https://stackoverflow.com/questions/70672729)
+9. [mp4mux not working with omxh264enc](https://forums.raspberrypi.com/viewtopic.php?t=206714&sid=ec650e96fc653a8ad0e06dd099cb9220)
+10. [omxh264enc makes qtmux error out with "Buffer has no PTS." - FreeDesktop - Gitlab](https://gitlab.freedesktop.org/gstreamer/gst-omx/-/issues/13)
+11. [gst-omx: Retire the whole package - FreeDesktop - Gitlab](https://gitlab.freedesktop.org/gstreamer/gstreamer/-/merge_requests/4976/)
