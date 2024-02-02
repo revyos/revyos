@@ -12,15 +12,25 @@ __RevyOS__ 围绕 c906fdv/c910v/c908 等芯片提供了完整而全面的适配�
 
 ## 镜像下载及刷写
 
-__RevyOS__ 的Lichee Pi 4A用户版镜像目前在 ISCAS（中国科学院软件研究所） 开源镜像站进行更新。如您想获取 __RevyOS__ 最新版镜像请访问：[镜像下载](https://mirror.iscas.ac.cn/revyos/extra/images/lpi4a/)
+__RevyOS__ 的用户版镜像目前在 ISCAS（中国科学院软件研究所） 开源镜像站进行更新。如您想获取 __RevyOS__ 最新版镜像请访问[镜像下载](https://mirror.iscas.ac.cn/revyos/extra/images/)目录，根据所使用设备来获取对应镜像。
 
-镜像刷写请参考：[镜像刷写教程](https://wiki.sipeed.com/hardware/zh/lichee/th1520/lpi4a/4_burn_image.html#%E6%89%B9%E9%87%8F%E7%83%A7%E5%BD%95)
+### Lichee Pi 4A
 
-__RevyOS__ 最新版镜像为 20231210 版本，本版本下载链接为：[RevyOS 1210版本下载](https://mirror.iscas.ac.cn/revyos/extra/images/lpi4a/20231210/)
+如您想获取 __RevyOS__ 最新版Lichee Pi 4A用户版镜像请访问[镜像下载](https://mirror.iscas.ac.cn/revyos/extra/images/lpi4a/)目录进行获取。
 
-本链接内包含 U-boot、boot以及 root 文件，刷写方式请参考[镜像刷写教程](https://wiki.sipeed.com/hardware/zh/lichee/th1520/lpi4a/4_burn_image.html#%E6%89%B9%E9%87%8F%E7%83%A7%E5%BD%95)。
+__RevyOS__ 最新版镜像为 20240202 版本，此版本为测试版本，下载链接为：[RevyOS 0202版本下载](https://mirror.iscas.ac.cn/revyos/extra/images/lpi4a/test/20240202/)（请注意，test目录下的内容可能会随着新版发布而被移除）,最新的正式版本为[20231210版本](https://mirror.iscas.ac.cn/revyos/extra/images/lpi4a/20231210/)。
 
-在完成镜像刷写后用户在登录界面，输入用户名 `debian`，密码 `debian` 就可以登录进入系统了。
+以上链接内包含 U-boot、boot以及 root 文件，刷写方式请参考[镜像刷写教程](https://wiki.sipeed.com/hardware/zh/lichee/th1520/lpi4a/4_burn_image.html#%E6%89%B9%E9%87%8F%E7%83%A7%E5%BD%95)。
+
+在完成镜像刷写后用户在登录界面，输入用户名 `debian`，密码 `debian` 即可登录进入系统。
+
+### Lichee Pi 4A&LicheePi Console 4A
+
+__RevyOS__ 在稳定发布Lichee Pi 4A用户版镜像的同时还发布了适用于LicheePi Console 4A的 __主线内核__ 版本镜像，本镜像在Lichee Pi 4A与LicheePi Console 4A上均可进行刷写使用。
+
+此镜像下载目录为：[镜像下载](https://mirror.iscas.ac.cn/revyos/extra/images/lpi4amain/)
+
+最新版本镜像为：[20240127版本下载](https://mirror.iscas.ac.cn/revyos/extra/images/lpi4amain/20240127/)
 
 ## 更新内容
 

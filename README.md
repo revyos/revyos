@@ -10,17 +10,27 @@ Currently, RevyOS meets basic user needs in areas like office tasks, web browsin
 
 Thanks to its customizations and optimizations, RevyOS offers superior performance and an excellent experience on hardware platforms like Lichee RV and Lichee Pi 4A.
 
-## Image Download and Installation
+## Image Download and Flashing
 
-The user image of RevyOS for Lichee Pi 4A is currently being updated on the open-source mirror site of [ISCAS (Institute of Software, Chinese Academy of Sciences)](https://mirror.iscas.ac.cn/revyos). To obtain the latest version of the RevyOS image, please visit: [Image Download](https://mirror.iscas.ac.cn/revyos/extra/images/lpi4a/).
+The user version images of __RevyOS__ are currently updated on the ISCAS (Institute of Software, Chinese Academy of Sciences) open-source mirror. To obtain the latest version of __RevyOS__, visit the [image download](https://mirror.iscas.ac.cn/revyos/extra/images/) directory and choose the corresponding image based on your device.
 
-For instructions on installing the image, please refer to: [Image Installation Guide](https://wiki.sipeed.com/hardware/zh/lichee/th1520/lpi4a/4_burn_image.html#%E6%89%B9%E9%87%8F%E7%83%A7%E5%BD%95).
+### Lichee Pi 4A
 
-The latest image version of RevyOS is the 20231210 edition. The download link for this version is: [RevyOS 1210 Version Download](https://mirror.iscas.ac.cn/revyos/extra/images/lpi4a/20231210/).
+To obtain the latest version of __RevyOS__ for Lichee Pi 4A, visit the [image download](https://mirror.iscas.ac.cn/revyos/extra/images/lpi4a/) directory.
 
-The provided link contains the U-boot, boot, and root files. For installation methods, please refer to the [Image Installation Guide](https://wiki.sipeed.com/hardware/zh/lichee/th1520/lpi4a/4_burn_image.html#%E6%89%B9%E9%87%8F%E7%83%A7%E5%BD%95).
+The latest version of __RevyOS__ image is version 20240202, which is a test version. Download link: [RevyOS 0202 Version](https://mirror.iscas.ac.cn/revyos/extra/images/lpi4a/test/20240202/) (Please note that the contents in the test directory may be removed with the release of new versions). The latest stable version is [20231210](https://mirror.iscas.ac.cn/revyos/extra/images/lpi4a/20231210/).
 
-Once the image installation is complete, users can log in using the username "debian" and the password "debian".
+The provided links include U-boot, boot, and root files. Refer to the [image flashing tutorial](https://wiki.sipeed.com/hardware/en/lichee/th1520/lpi4a/4_burn_image.html#%E6%89%B9%E9%87%8F%E7%83%A7%E5%BD%95) for the flashing procedure.
+
+After flashing the image, log in to the system using the username `debian` and password `debian` at the login prompt.
+
+### Lichee Pi 4A & LicheePi Console 4A
+
+In addition to releasing a stable version of __RevyOS__ for Lichee Pi 4A users, __RevyOS__ has also released a version with the __mainline kernel__ suitable for LicheePi Console 4A. This image can be flashed and used on both Lichee Pi 4A and LicheePi Console 4A.
+
+The image download directory is: [image download](https://mirror.iscas.ac.cn/revyos/extra/images/lpi4amain/)
+
+The latest version of the image is: [20240127 Version](https://mirror.iscas.ac.cn/revyos/extra/images/lpi4amain/20240127/)
 
 ## Updates and Announcements
 
@@ -30,7 +40,8 @@ After an image version update, we will announce the features and changes support
 
 If you encounter any issues while using the system, you can [submit an issue](https://github.com/revyos/revyos/issues).
 
-User Documentation
+## User Documentation
+
 In this repository, we offer various user guides, including documentation on system building, adaptation, and testing. This comprehensive documentation helps users get acquainted with the system more quickly.
 
 For compile and build documentation: [Click here](https://github.com/ruyisdk/revyos/tree/main/Build)
