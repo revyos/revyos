@@ -24,9 +24,9 @@ __RevyOS__ 最新版镜像为 20240202 版本，此版本为测试版本，下�
 
 在完成镜像刷写后用户在登录界面，输入用户名 `debian`，密码 `debian` 即可登录进入系统。
 
-### Lichee Pi 4A&LicheePi Console 4A
+### Lichee Pi 4A&LicheePi Cluster 4A
 
-__RevyOS__ 在稳定发布Lichee Pi 4A用户版镜像的同时还发布了适用于LicheePi Console 4A的 __主线内核__ 版本镜像，本镜像在Lichee Pi 4A与LicheePi Console 4A上均可进行刷写使用。
+__RevyOS__ 在稳定发布Lichee Pi 4A用户版镜像的同时还发布了适用于LicheePi Cluster 4A的 __主线内核__ 版本镜像，本镜像在Lichee Pi 4A与LicheePi Cluster 4A上均可进行刷写使用。
 
 此镜像下载目录为：[镜像下载](https://mirror.iscas.ac.cn/revyos/extra/images/lpi4amain/)
 

@@ -24,9 +24,9 @@ The provided links include U-boot, boot, and root files. Refer to the [image fla
 
 After flashing the image, log in to the system using the username `debian` and password `debian` at the login prompt.
 
-### Lichee Pi 4A & LicheePi Console 4A
+### Lichee Pi 4A & LicheePi Cluster 4A
 
-In addition to releasing a stable version of __RevyOS__ for Lichee Pi 4A users, __RevyOS__ has also released a version with the __mainline kernel__ suitable for LicheePi Console 4A. This image can be flashed and used on both Lichee Pi 4A and LicheePi Console 4A.
+In addition to releasing a stable version of __RevyOS__ for Lichee Pi 4A users, __RevyOS__ has also released a version with the __mainline kernel__ suitable for LicheePi Cluster 4A. This image can be flashed and used on both Lichee Pi 4A and LicheePi Cluster 4A.
 
 The image download directory is: [image download](https://mirror.iscas.ac.cn/revyos/extra/images/lpi4amain/)
 
