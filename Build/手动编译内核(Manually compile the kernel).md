@@ -2,7 +2,7 @@
 
 内核工具链下载地址：
 
-https://occ-oss-prod.oss-cn-hangzhou.aliyuncs.com/resource//1663142514282/Xuantie-900-gcc-linux-5.10.4-glibc-x86_64-V2.6.1-20220906.tar.gz
+https://occ-oss-prod.oss-cn-hangzhou.aliyuncs.com/resource//1698113812618/Xuantie-900-gcc-linux-5.10.4-glibc-x86_64-V2.8.0-20231018.tar.gz
 
 这里假设编译环境为 `Ubuntu` 或 `Debian`
 
@@ -13,12 +13,12 @@ sudo apt install -y gdisk dosfstools g++-12-riscv64-linux-gnu build-essential li
 
 解压工具链（这里解压到/opt）：
 ```
-tar -xvf Xuantie-900-gcc-linux-5.10.4-glibc-x86_64-V2.6.1-20220906.tar.gz -C /opt
+tar -xvf Xuantie-900-gcc-linux-5.10.4-glibc-x86_64-V2.8.0-20231018.tar.gz -C /opt
 ```
 
 设置环境变量，将工具链加入环境变量中（假设工具链放在/opt中）：
 ```
-export PATH="/opt/Xuantie-900-gcc-linux-5.10.4-glibc-x86_64-V2.6.1/bin:$PATH"
+export PATH="/opt/Xuantie-900-gcc-linux-5.10.4-glibc-x86_64-V2.8.0/bin:$PATH"
 export CROSS_COMPILE=riscv64-unknown-linux-gnu-
 export ARCH=riscv
 ```
@@ -66,7 +66,7 @@ sudo cp -v arch/riscv/boot/dts/thead/light-lpi4a-16gb.dts ../rootfs/boot/
 
 Build Toolchain Download link:
 
-https://occ-oss-prod.oss-cn-hangzhou.aliyuncs.com/resource//1663142514282/Xuantie-900-gcc-linux-5.10.4-glibc-x86_64-V2.6.1-20220906.tar.gz
+https://occ-oss-prod.oss-cn-hangzhou.aliyuncs.com/resource//1698113812618/Xuantie-900-gcc-linux-5.10.4-glibc-x86_64-V2.8.0-20231018.tar.gz
 
 Assuming Build environment is `Ubuntu` or `Debian`
 
@@ -77,12 +77,12 @@ sudo apt install -y gdisk dosfstools g++-12-riscv64-linux-gnu build-essential li
 
 Uncompress Toolchain (Assuming install to /opt):
 ```
-tar -xvf Xuantie-900-gcc-linux-5.10.4-glibc-x86_64-V2.6.1-20220906.tar.gz -C /opt
+tar -xvf Xuantie-900-gcc-linux-5.10.4-glibc-x86_64-V2.8.0-20231018.tar.gz -C /opt
 ```
 
 Setup environment variables (Assuming Toolchain is in /opt):
 ```
-export PATH="/opt/Xuantie-900-gcc-linux-5.10.4-glibc-x86_64-V2.6.1/bin:$PATH"
+export PATH="/opt/Xuantie-900-gcc-linux-5.10.4-glibc-x86_64-V2.8.0/bin:$PATH"
 export CROSS_COMPILE=riscv64-unknown-linux-gnu-
 export ARCH=riscv
 ```
