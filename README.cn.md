@@ -2,7 +2,7 @@
 
 ## 简介
 
-[RevyOS](https://github.com/orgs/revyos/repositories)是由如意SDK团队的RevyOS小队支持开发的一款针对T-Head芯片生态的Debian优化定制发行版。
+[RevyOS](https://github.com/orgs/revyos/repositories)是由RuyiSDK团队的RevyOS小队支持开发的一款针对T-Head芯片生态的Debian优化定制发行版。
 
 __RevyOS__ 围绕 c906fdv/c910v/c908 等芯片提供了完整而全面的适配和优化支持，默认集成支持 RVV0.7.1和 XThead 的 GCC 工具链，并搭载使用 RVV0.7.1指令集优化过的 glibc 和 kernel。
 
