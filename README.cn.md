@@ -32,6 +32,14 @@ __RevyOS__ 在稳定发布Lichee Pi 4A用户版镜像的同时还发布了适用
 
 最新版本镜像为：[20240127版本下载](https://mirror.iscas.ac.cn/revyos/extra/images/lpi4amain/20240127/)
 
+### Milk-V Pioneer
+
+__RevyOS__ 目前还发布了适用于Milk-V Pioneer的用户镜像。
+
+此镜像下载目录为：[镜像下载](https://mirror.iscas.ac.cn/revyos/extra/images/sg2042/)
+
+最新版本镜像为：[20240327版本下载](https://mirror.iscas.ac.cn/revyos/extra/images/sg2042/20240327/)
+
 ## 更新内容
 
 镜像版本更新后我们会公布当前版本镜像支持内容，如您想查看镜像支持内容请点击[RevyOS版本更新日志](./Change%20Log/)后选择您所需要的版本进行查看。

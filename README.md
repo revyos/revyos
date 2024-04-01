@@ -32,6 +32,14 @@ The image download directory is: [image download](https://mirror.iscas.ac.cn/rev
 
 The latest version of the image is: [20240127 Version](https://mirror.iscas.ac.cn/revyos/extra/images/lpi4amain/20240127/)
 
+### Milk-V Pioneer
+
+__RevyOS__ has now released user images for Milk-V Pioneer.
+
+The download directory for these images is: [Image Downloads](https://mirror.iscas.ac.cn/revyos/extra/images/sg2042/)
+
+The latest version image is available for download: [Version 20240327 Download](https://mirror.iscas.ac.cn/revyos/extra/images/sg2042/20240327/)
+
 ## Updates and Announcements
 
 After an image version update, we will announce the features and changes supported by the current version. If you wish to view the contents supported by the image, click on [RevyOS Version ChangeLog](https://github.com/ruyisdk/revyos/tree/main/Change%20Log) and select the version you're interested in.
