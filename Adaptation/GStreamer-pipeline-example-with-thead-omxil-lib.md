@@ -304,6 +304,21 @@ gst-launch-1.0 v4l2src device=/dev/video0 ! videoconvert \
 
 ### Stream transfer
 
+```bash
+# capture camera and stream to other machine
+
+## source
+gst-launch-1.0 v4l2src device=/dev/video0 !  videoconvert ! videorate \
+  ! video/x-raw,  format=NV12,width=640,height=480,framerate=20/1 \
+  ! rawvideoparse format=nv12 width=640 height=480  framerate=20/1 \
+  ! omxh264enc ! h264parse config-interval=1 ! video/x-h264,stream-format=byte-stream,alignment=nal \
+  ! rtph264pay ! udpsink  host=192.168.31.27 port=5600
+
+## destination
+gst-launch-1.0 udpsrc port=5600 caps='application/x-rtp, media=(string)video, clock-rate=(int)90000, encoding-name=(string)H264' \
+  ! rtph264depay ! h264parse ! avdec_h264 ! autovideosink
+```
+
 ### Other tools
 
 #### gst-inspect-1.0
