@@ -18,9 +18,9 @@ __RevyOS__ 的用户版镜像目前在 ISCAS（中国科学院软件研究所）
 
 如您想获取 __RevyOS__ 最新版Lichee Pi 4A用户版镜像请访问[镜像下载](https://mirror.iscas.ac.cn/revyos/extra/images/lpi4a/)目录进行获取。
 
-__RevyOS__ 最新版镜像为 20240202 版本，此版本为测试版本，下载链接为：[RevyOS 0202版本下载](https://mirror.iscas.ac.cn/revyos/extra/images/lpi4a/test/20240202/)（请注意，test目录下的内容可能会随着新版发布而被移除）,最新的正式版本为[20231210版本](https://mirror.iscas.ac.cn/revyos/extra/images/lpi4a/20231210/)。
+__RevyOS__ 最新版镜像为 20240529 版本，此版本为测试版本，镜像下载链接为：[RevyOS 0529版本镜像下载](https://github.com/revyos/mkimg-th1520/actions/runs/9287642918)，Uboot下载链接为：[RevyOS 0529版本Uboot下载](https://github.com/revyos/thead-u-boot/actions/runs/9326868005)
 
-以上链接内包含 U-boot、boot以及 root 文件，刷写方式请参考[镜像刷写教程](https://wiki.sipeed.com/hardware/zh/lichee/th1520/lpi4a/4_burn_image.html#%E6%89%B9%E9%87%8F%E7%83%A7%E5%BD%95)。
+刷写方式请参考[镜像刷写教程](https://wiki.sipeed.com/hardware/zh/lichee/th1520/lpi4a/4_burn_image.html#%E6%89%B9%E9%87%8F%E7%83%A7%E5%BD%95)。
 
 在完成镜像刷写后用户在登录界面，输入用户名 `debian`，密码 `debian` 即可登录进入系统。
 
@@ -30,7 +30,7 @@ __RevyOS__ 在稳定发布Lichee Pi 4A用户版镜像的同时还发布了适用
 
 此镜像下载目录为：[镜像下载](https://mirror.iscas.ac.cn/revyos/extra/images/lpi4amain/)
 
-最新版本镜像为：[20240127版本下载](https://mirror.iscas.ac.cn/revyos/extra/images/lpi4amain/20240127/)
+最新版本镜像为：[20240529版本下载](https://github.com/revyos/mkimg-th1520/actions/runs/9287642918)
 
 ### Milk-V Pioneer
 
@@ -38,7 +38,7 @@ __RevyOS__ 目前还发布了适用于Milk-V Pioneer的用户镜像。
 
 此镜像下载目录为：[镜像下载](https://mirror.iscas.ac.cn/revyos/extra/images/sg2042/)
 
-最新版本镜像为：[20240327版本下载](https://mirror.iscas.ac.cn/revyos/extra/images/sg2042/20240327/)
+最新版本镜像为：[20240529版本下载](https://github.com/revyos/mkimg-th1520/actions/runs/9287642918)
 
 ## 更新内容
 
