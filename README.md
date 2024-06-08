@@ -18,7 +18,7 @@ The user version images of __RevyOS__ are currently updated on the ISCAS (Instit
 
 To get the latest user version of the __RevyOS__ image for the Lichee Pi 4A, please visit the [Image Download](https://mirror.iscas.ac.cn/revyos/extra/images/lpi4a/) directory.
 
-The latest version of the __RevyOS__ image is 20240529. You can download the image from [RevyOS 0529 Image Download](https://github.com/revyos/mkimg-th1520/releases/tag/20240529) and the Uboot from [RevyOS 0529 Uboot Download](https://github.com/revyos/thead-u-boot/actions/runs/9326868005).
+The latest version of the __RevyOS__ image is 20240529. You can download the image from [RevyOS 0601 Image Download](https://mirror.iscas.ac.cn/revyos/extra/images/lpi4a/20240601/)
 
 For flashing instructions, please refer to the [Image Flashing Tutorial](https://wiki.sipeed.com/hardware/zh/lichee/th1520/lpi4a/4_burn_image.html#%E6%89%B9%E9%87%8F%E7%83%A7%E5%BD%95).
 
@@ -34,11 +34,19 @@ The latest version of the image is: [20240529 Version Download](https://github.c
 
 ### Milk-V Pioneer
 
-__RevyOS__ has also released a user image for the Milk-V Pioneer.
+__RevyOS__ has released a user image for the Milk-V Pioneer.
 
 The download directory for this image is: [Image Download](https://mirror.iscas.ac.cn/revyos/extra/images/sg2042/)
 
 The latest version of the image is: [20240327 Version Download](https://mirror.iscas.ac.cn/revyos/extra/images/sg2042/20240327/)
+
+### Milk-V Meles
+
+__RevyOS__ has released a user image for the Milk-V Meles.
+
+The download directory for this image is：[镜像下载](https://mirror.iscas.ac.cn/revyos/extra/images/meles/)
+
+The latest version of the image is：[20240601版本下载](https://mirror.iscas.ac.cn/revyos/extra/images/meles/20240601/)
 
 ## Updates and Announcements
 
