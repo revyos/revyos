@@ -42,7 +42,7 @@ __RevyOS__ 发布了适用于Milk-V Pioneer的用户镜像。
 
 ### Milk-V Meles
 
-__RevyOS__ 发布了适用于Milk-V Pioneer的用户镜像。
+__RevyOS__ 发布了适用于Milk-V Meles的用户镜像。
 
 此镜像下载目录为：[镜像下载](https://mirror.iscas.ac.cn/revyos/extra/images/meles/)
 
