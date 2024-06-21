@@ -46,7 +46,7 @@ __RevyOS__ has released a user image for the Milk-V Meles.
 
 The download directory for this image is：[镜像下载](https://mirror.iscas.ac.cn/revyos/extra/images/meles/)
 
-The latest version of the image is：[20240601版本下载](https://mirror.iscas.ac.cn/revyos/extra/images/meles/20240601/)
+The latest version of the image is：[20240601 Version Download](https://mirror.iscas.ac.cn/revyos/extra/images/meles/20240601/)
 
 ## Updates and Announcements
 
