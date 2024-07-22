@@ -18,7 +18,7 @@ __RevyOS__ 的用户版镜像目前在 ISCAS（中国科学院软件研究所）
 
 如您想获取 __RevyOS__ 最新版Lichee Pi 4A用户版镜像请访问[镜像下载](https://mirror.iscas.ac.cn/revyos/extra/images/lpi4a/)目录进行获取。
 
-__RevyOS__ 最新版镜像为 20240601 版本，镜像下载链接为：[RevyOS 0601版本镜像下载](https://mirror.iscas.ac.cn/revyos/extra/images/lpi4a/20240601/)
+__RevyOS__ 最新版镜像为 20240720 版本，镜像下载链接为：[RevyOS 0720版本镜像下载](https://mirror.iscas.ac.cn/revyos/extra/images/lpi4a/20240720/)
 
 刷写方式请参考[镜像刷写教程](https://wiki.sipeed.com/hardware/zh/lichee/th1520/lpi4a/4_burn_image.html#%E6%89%B9%E9%87%8F%E7%83%A7%E5%BD%95)。
 
@@ -32,13 +32,33 @@ __RevyOS__ 在稳定发布Lichee Pi 4A用户版镜像的同时还发布了适用
 
 最新版本镜像为：[20240529版本下载](https://github.com/revyos/mkimg-th1520/releases/tag/20240529)
 
+### LicheeConsole 4A
+
+如您想获取 __RevyOS__ 最新版LicheeConsole 4A用户版镜像请访问[镜像下载](https://mirror.iscas.ac.cn/revyos/extra/images/lcon4a/)目录进行获取。
+
+__RevyOS__ 最新版镜像为 20240720 版本，镜像下载链接为：[RevyOS 0720版本镜像下载](https://mirror.iscas.ac.cn/revyos/extra/images/lcon4a/20240720/)
+
+刷写方式请参考[镜像刷写教程](https://wiki.sipeed.com/hardware/zh/lichee/th1520/lcon4a/4_burn_image.html)。
+
+在完成镜像刷写后用户在登录界面，输入用户名 `debian`，密码 `debian` 即可登录进入系统。
+
+### LicheeBook 4A
+
+如您想获取 __RevyOS__ 最新版LicheeBook 4A用户版镜像请访问[镜像下载](https://mirror.iscas.ac.cn/revyos/extra/images/laptop4a/)目录进行获取。
+
+__RevyOS__ 最新版镜像为 20240720 版本，镜像下载链接为：[RevyOS 0720版本镜像下载](https://mirror.iscas.ac.cn/revyos/extra/images/laptop4a/20240720/)
+
+刷写方式请参考[镜像刷写教程](https://wiki.sipeed.com/hardware/zh/lichee/th1520/lbook4a/4_burn_image.html)。
+
+在完成镜像刷写后用户在登录界面，输入用户名 `debian`，密码 `debian` 即可登录进入系统。
+
 ### Milk-V Pioneer
 
 __RevyOS__ 发布了适用于Milk-V Pioneer的用户镜像。
 
 此镜像下载目录为：[镜像下载](https://mirror.iscas.ac.cn/revyos/extra/images/sg2042/)
 
-最新版本镜像为：[20240327版本下载](https://mirror.iscas.ac.cn/revyos/extra/images/sg2042/20240327/)
+最新版本镜像为：[20240716版本下载](https://mirror.iscas.ac.cn/revyos/extra/images/sg2042/20240716/)
 
 ### Milk-V Meles
 
@@ -46,7 +66,9 @@ __RevyOS__ 发布了适用于Milk-V Meles的用户镜像。
 
 此镜像下载目录为：[镜像下载](https://mirror.iscas.ac.cn/revyos/extra/images/meles/)
 
-最新版本镜像为：[20240601版本下载](https://mirror.iscas.ac.cn/revyos/extra/images/meles/20240601/)
+最新版本镜像为：[20240720版本下载](https://mirror.iscas.ac.cn/revyos/extra/images/meles/20240720/)
+
+在完成镜像刷写后用户在登录界面，输入用户名 `debian`，密码 `debian` 即可登录进入系统。
 
 ## 更新内容
 

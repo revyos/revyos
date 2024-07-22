@@ -16,37 +16,59 @@ The user version images of __RevyOS__ are currently updated on the ISCAS (Instit
 
 ### Lichee Pi 4A
 
-To get the latest user version of the __RevyOS__ image for the Lichee Pi 4A, please visit the [Image Download](https://mirror.iscas.ac.cn/revyos/extra/images/lpi4a/) directory.
+To get the latest user version of __RevyOS__ for Lichee Pi 4A, visit the [Image Download](https://mirror.iscas.ac.cn/revyos/extra/images/lpi4a/) directory.
 
-The latest version of the __RevyOS__ image is 20240529. You can download the image from [RevyOS 0601 Image Download](https://mirror.iscas.ac.cn/revyos/extra/images/lpi4a/20240601/)
+The latest version of the __RevyOS__ image is the 20240720 version, available for download at: [RevyOS 0720 Version Image Download](https://mirror.iscas.ac.cn/revyos/extra/images/lpi4a/20240720/).
 
-For flashing instructions, please refer to the [Image Flashing Tutorial](https://wiki.sipeed.com/hardware/zh/lichee/th1520/lpi4a/4_burn_image.html#%E6%89%B9%E9%87%8F%E7%83%A7%E5%BD%95).
+For flashing instructions, refer to the [Image Flashing Tutorial](https://wiki.sipeed.com/hardware/zh/lichee/th1520/lpi4a/4_burn_image.html#%E6%89%B9%E9%87%8F%E7%83%A7%E5%BD%95).
 
-After completing the image flashing, at the login screen, enter the username `debian` and the password `debian` to log into the system.
+After flashing the image, log in with the username `debian` and password `debian`.
 
 ### Lichee Pi 4A & LicheePi Cluster 4A
 
-Along with the stable release of the Lichee Pi 4A user image, __RevyOS__ has also released a __mainline kernel__ version image for the LicheePi Cluster 4A. This image can be flashed and used on both the Lichee Pi 4A and the LicheePi Cluster 4A.
+In addition to the stable user version for Lichee Pi 4A, __RevyOS__ also releases a **mainline kernel** version image suitable for both Lichee Pi 4A and LicheePi Cluster 4A.
 
-The download directory for this image is: [Image Download](https://mirror.iscas.ac.cn/revyos/extra/images/lpi4amain/)
+This image download directory is: [Image Download](https://mirror.iscas.ac.cn/revyos/extra/images/lpi4amain/).
 
-The latest version of the image is: [20240529 Version Download](https://github.com/revyos/mkimg-th1520/releases/tag/20240529)
+The latest version of the image is: [20240529 Version Download](https://github.com/revyos/mkimg-th1520/releases/tag/20240529).
+
+### LicheeConsole 4A
+
+To get the latest user version of __RevyOS__ for LicheeConsole 4A, visit the [Image Download](https://mirror.iscas.ac.cn/revyos/extra/images/lcon4a/) directory.
+
+The latest version of the __RevyOS__ image is the 20240720 version, available for download at: [RevyOS 0720 Version Image Download](https://mirror.iscas.ac.cn/revyos/extra/images/lcon4a/20240720/).
+
+For flashing instructions, refer to the [Image Flashing Tutorial](https://wiki.sipeed.com/hardware/zh/lichee/th1520/lcon4a/4_burn_image.html).
+
+After flashing the image, log in with the username `debian` and password `debian`.
+
+### LicheeBook 4A
+
+To get the latest user version of __RevyOS__ for LicheeBook 4A, visit the [Image Download](https://mirror.iscas.ac.cn/revyos/extra/images/laptop4a/) directory.
+
+The latest version of the __RevyOS__ image is the 20240720 version, available for download at: [RevyOS 0720 Version Image Download](https://mirror.iscas.ac.cn/revyos/extra/images/laptop4a/20240720/).
+
+For flashing instructions, refer to the [Image Flashing Tutorial](https://wiki.sipeed.com/hardware/zh/lichee/th1520/lbook4a/4_burn_image.html).
+
+After flashing the image, log in with the username `debian` and password `debian`.
 
 ### Milk-V Pioneer
 
-__RevyOS__ has released a user image for the Milk-V Pioneer.
+__RevyOS__ has released a user image for Milk-V Pioneer.
 
-The download directory for this image is: [Image Download](https://mirror.iscas.ac.cn/revyos/extra/images/sg2042/)
+This image download directory is: [Image Download](https://mirror.iscas.ac.cn/revyos/extra/images/sg2042/).
 
-The latest version of the image is: [20240327 Version Download](https://mirror.iscas.ac.cn/revyos/extra/images/sg2042/20240327/)
+The latest version of the image is: [20240716 Version Download](https://mirror.iscas.ac.cn/revyos/extra/images/sg2042/20240716/).
 
 ### Milk-V Meles
 
-__RevyOS__ has released a user image for the Milk-V Meles.
+__RevyOS__ has released a user image for Milk-V Meles.
 
-The download directory for this image is：[镜像下载](https://mirror.iscas.ac.cn/revyos/extra/images/meles/)
+This image download directory is: [Image Download](https://mirror.iscas.ac.cn/revyos/extra/images/meles/).
 
-The latest version of the image is：[20240601 Version Download](https://mirror.iscas.ac.cn/revyos/extra/images/meles/20240601/)
+The latest version of the image is: [20240720 Version Download](https://mirror.iscas.ac.cn/revyos/extra/images/meles/20240720/).
+
+After flashing the image, log in with the username `debian` and password `debian`.
 
 ## Updates and Announcements
 
