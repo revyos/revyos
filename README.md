@@ -4,7 +4,7 @@
 
 [RevyOS](https://github.com/revyos)  is a custom Debian distribution optimized for the XuanTie chip ecosystem, supported and developed by the RevyOS team from the [Ruyi SDK](https://github.com/ruyisdk) team.
 
-RevyOS provides comprehensive adaptation and optimization support for chips such as c906fdv, c910v, and c908. By default, it integrates support for the RVV0.7.1 and XThead GCC toolchains. Furthermore, it is equipped with glibc and kernel optimized for the RVV0.7.1 instruction set.
+RevyOS provides comprehensive adaptation and optimization support for chips such as c906fdv, c910v, and c908. By default, it integrates support for the RVV 1.0 and XThead GCC toolchains. Furthermore, it is equipped with glibc and kernel optimized for the RVV 1.0 instruction set.
 
 Currently, RevyOS meets basic user needs in areas like office tasks, web browsing, and video playback.
 
