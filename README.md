@@ -20,7 +20,7 @@ The user version images of __RevyOS__ are currently updated on the ISCAS (Instit
 | LicheePi Cluster 4A | [20240720](https://mirror.iscas.ac.cn/revyos/extra/images/lpi4a/) | [Flashing Image](./Image%20flashing/licheepi4a.md)  |  |  |
 | LicheeConsole 4A | [20240720](https://mirror.iscas.ac.cn/revyos/extra/images/lcon4a/20240720/) | [Flashing Image](./Image%20flashing/licheeconsole4a.md)  |  |  |
 | Lichee Book 4A | [20240720](https://mirror.iscas.ac.cn/revyos/extra/images/laptop4a/) | [Flashing Image](./Image%20flashing/licheebook.md)  |  |  |
-| Milk-V Pioneer | [20240716](https://mirror.iscas.ac.cn/revyos/extra/images/meles/20240720/) | [Flashing Image](https://milkv.io/zh/docs/pioneer/getting-started/InstallOS)  |  |  |
+| Milk-V Pioneer | [20240716](https://mirror.iscas.ac.cn/revyos/extra/images/sg2042/20240716/) | [Flashing Image](https://milkv.io/zh/docs/pioneer/getting-started/InstallOS)  |  |  |
 | Milk-V Meles | [20240720](https://mirror.iscas.ac.cn/revyos/extra/images/meles/20240720/) | [Flashing Image](https://milkv.io/zh/docs/meles/installation)  |  |  |
 | Beagle-Ahead | [20231210](https://mirror.iscas.ac.cn/revyos/extra/images/beagle/20231210/) | [Flashing Image]()  |  |  |
 | Huiwei book | [20240617](https://mirror.iscas.ac.cn/revyos/extra/images/huiwei/test/20240617/) | [Flashing Image]()  |  |  |
