@@ -14,13 +14,13 @@ __RevyOS__ 围绕玄铁C906、C910、C920、C908等芯片提供了完整而全�
 
 __RevyOS__ 的用户版镜像目前在 ISCAS（中国科学院软件研究所） 开源镜像站进行更新。如您想获取 __RevyOS__ 最新版镜像请访问[镜像下载](https://mirror.iscas.ac.cn/revyos/extra/images/)目录，根据所使用设备来获取对应镜像。
 
-| 支持设备 | 镜像下载（最新版本） | 刷写教程 | sd卡支持 | 主线内核支持 |
+| 支持设备 | 镜像下载（最新版本） | 刷写教程 | sd卡支持 | 内核版本 |
 | --- | --- | --- | --- | --- |
 | Lichee Pi 4A | [20240720](https://mirror.iscas.ac.cn/revyos/extra/images/lpi4a/20240720/) | [镜像刷写](./Image%20flashing/licheepi4a.md) |  |  |
 | LicheePi Cluster 4A | [20240720](https://mirror.iscas.ac.cn/revyos/extra/images/lpi4a/) | [镜像刷写](./Image%20flashing/licheepi4a.md)  |  |  |
 | LicheeConsole 4A | [20240720](https://mirror.iscas.ac.cn/revyos/extra/images/lcon4a/20240720/) | [镜像刷写](./Image%20flashing/licheeconsole4a.md)  |  |  |
 | Lichee Book 4A | [20240720](https://mirror.iscas.ac.cn/revyos/extra/images/laptop4a/) | [镜像刷写](./Image%20flashing/licheebook.md)  |  |  |
-| Milk-V Pioneer | [20240716](https://mirror.iscas.ac.cn/revyos/extra/images/sg2042/20240716/) | [镜像刷写](https://milkv.io/zh/docs/pioneer/getting-started/InstallOS)  |  |  |
+| Milk-V Pioneer | [20240819](https://mirror.iscas.ac.cn/revyos/extra/images/sg2042/20240819/) | [镜像刷写](https://milkv.io/zh/docs/pioneer/getting-started/InstallOS)  |  | 6.6.46 |
 | Milk-V Meles | [20240720](https://mirror.iscas.ac.cn/revyos/extra/images/meles/20240720/) | [镜像刷写](https://milkv.io/zh/docs/meles/installation)  |  |  |
 | Beagle-Ahead | [20231210](https://mirror.iscas.ac.cn/revyos/extra/images/beagle/20231210/) | [镜像刷写]()  |  |  |
 | Huiwei book | [20240617](https://mirror.iscas.ac.cn/revyos/extra/images/huiwei/test/20240617/) | [镜像刷写]()  |  |  |

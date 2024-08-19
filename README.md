@@ -14,13 +14,13 @@ Thanks to its customizations and optimizations, RevyOS offers superior performan
 
 The user version images of __RevyOS__ are currently updated on the ISCAS (Institute of Software, Chinese Academy of Sciences) open-source mirror. To obtain the latest version of __RevyOS__, visit the [image download](https://mirror.iscas.ac.cn/revyos/extra/images/) directory and choose the corresponding image based on your device.
 
-| Supported Devices | Image Download (Latest Version) | Flashing Tutorial | SD Card Support | Mainline Kernel Support |
+| Supported Devices | Image Download (Latest Version) | Flashing Tutorial | SD Card Support | Kernel version |
 | --- | --- | --- | --- | --- |
 | Lichee Pi 4A | [20240720](https://mirror.iscas.ac.cn/revyos/extra/images/lpi4a/20240720/) | [Flashing Image](./Image%20flashing/licheepi4a.md) |  |  |
 | LicheePi Cluster 4A | [20240720](https://mirror.iscas.ac.cn/revyos/extra/images/lpi4a/) | [Flashing Image](./Image%20flashing/licheepi4a.md)  |  |  |
 | LicheeConsole 4A | [20240720](https://mirror.iscas.ac.cn/revyos/extra/images/lcon4a/20240720/) | [Flashing Image](./Image%20flashing/licheeconsole4a.md)  |  |  |
 | Lichee Book 4A | [20240720](https://mirror.iscas.ac.cn/revyos/extra/images/laptop4a/) | [Flashing Image](./Image%20flashing/licheebook.md)  |  |  |
-| Milk-V Pioneer | [20240716](https://mirror.iscas.ac.cn/revyos/extra/images/sg2042/20240716/) | [Flashing Image](https://milkv.io/zh/docs/pioneer/getting-started/InstallOS)  |  |  |
+| Milk-V Pioneer | [20240819](https://mirror.iscas.ac.cn/revyos/extra/images/sg2042/20240819/) | [Flashing Image](https://milkv.io/zh/docs/pioneer/getting-started/InstallOS)  |  | 6.6.46 |
 | Milk-V Meles | [20240720](https://mirror.iscas.ac.cn/revyos/extra/images/meles/20240720/) | [Flashing Image](https://milkv.io/zh/docs/meles/installation)  |  |  |
 | Beagle-Ahead | [20231210](https://mirror.iscas.ac.cn/revyos/extra/images/beagle/20231210/) | [Flashing Image]()  |  |  |
 | Huiwei book | [20240617](https://mirror.iscas.ac.cn/revyos/extra/images/huiwei/test/20240617/) | [Flashing Image]()  |  |  |
