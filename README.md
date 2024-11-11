@@ -14,16 +14,16 @@ Thanks to its customizations and optimizations, RevyOS offers superior performan
 
 The user version images of __RevyOS__ are currently updated on the ISCAS (Institute of Software, Chinese Academy of Sciences) open-source mirror. To obtain the latest version of __RevyOS__, visit the [image download](https://mirror.iscas.ac.cn/revyos/extra/images/) directory and choose the corresponding image based on your device.
 
-| Supported Devices | Image Download (Latest Version) | Flashing Tutorial | SD Card Support | Kernel version |
-| --- | --- | --- | --- | --- |
-| Lichee Pi 4A | [20240720](https://mirror.iscas.ac.cn/revyos/extra/images/lpi4a/20240720/) | [Flashing Image](./Installation/licheepi4a.md) |  |  |
-| LicheePi Cluster 4A | [20240720](https://mirror.iscas.ac.cn/revyos/extra/images/lpi4a/) | [Flashing Image](./Installation/licheepi4a.md)  |  |  |
-| LicheeConsole 4A | [20240720](https://mirror.iscas.ac.cn/revyos/extra/images/lcon4a/20240720/) | [Flashing Image](./Image%20flashing/licheeconsole4a.md)  |  |  |
-| Lichee Book 4A | [20240720](https://mirror.iscas.ac.cn/revyos/extra/images/laptop4a/) | [Flashing Image](./Image%20flashing/licheebook.md)  |  |  |
-| Milk-V Pioneer | [20241025](https://mirror.iscas.ac.cn/revyos/extra/images/sg2042/20241025/) | [Flashing Image](https://docs.revyos.dev/Installation/milkv-pioneer/)  |  | 6.6.46 |
-| Milk-V Meles | [20240720](https://mirror.iscas.ac.cn/revyos/extra/images/meles/20240720/) | [Flashing Image](https://milkv.io/zh/docs/meles/installation)  |  |  |
-| Beagle-Ahead | [20231210](https://mirror.iscas.ac.cn/revyos/extra/images/beagle/20231210/) | [Flashing Image]()  |  |  |
-| Huiwei book | [20240617](https://mirror.iscas.ac.cn/revyos/extra/images/huiwei/test/20240617/) | [Flashing Image]()  |  |  |
+| Supported Devices | Image Download (Latest Version) | Flashing Tutorial | SD Card Support |
+| --- | --- | --- | --- |
+| Lichee Pi 4A | [20240720](https://mirror.iscas.ac.cn/revyos/extra/images/lpi4a/20240720/) | [Flashing Image](./Installation/licheepi4a.md) | Supported |
+| LicheePi Cluster 4A | [20240720](https://mirror.iscas.ac.cn/revyos/extra/images/lpi4a/) | [Flashing Image](./Installation/licheepi4a.md)  |  |
+| LicheeConsole 4A | [20240720](https://mirror.iscas.ac.cn/revyos/extra/images/lcon4a/20240720/) | [Flashing Image](./Image%20flashing/licheeconsole4a.md)  |  |
+| Lichee Book 4A | [20240720](https://mirror.iscas.ac.cn/revyos/extra/images/laptop4a/) | [Flashing Image](./Image%20flashing/licheebook.md)  |  |
+| Milk-V Pioneer | [20241025](https://mirror.iscas.ac.cn/revyos/extra/images/sg2042/20241025/) | [Flashing Image](https://docs.revyos.dev/Installation/milkv-pioneer/)  | Supported |
+| Milk-V Meles | [20240720](https://mirror.iscas.ac.cn/revyos/extra/images/meles/20240720/) | [Flashing Image](https://milkv.io/zh/docs/meles/installation)  | Supported |
+| Beagle-Ahead | [20231210](https://mirror.iscas.ac.cn/revyos/extra/images/beagle/20231210/) | [Flashing Image]()  |  |
+| Huiwei book | [20240617](https://mirror.iscas.ac.cn/revyos/extra/images/huiwei/test/20240617/) | [Flashing Image]()  |  |
 
 ## Updates and Announcements
 
@@ -43,7 +43,7 @@ For adaptation-related documentation: [Click here](https://github.com/ruyisdk/re
 
 For testing-related documentation: [Click here](https://github.com/ruyisdk/revyos/tree/main/Test).
 
-For 玄铁曳影1520芯片原型用户手册_CN：[Click here](https://occ-oss-prod.oss-cn-hangzhou.aliyuncs.com/resource//1697208997919/%E7%8E%84%E9%93%81%E6%9B%B3%E5%BD%B11520%E8%8A%AF%E7%89%87%E5%8E%9F%E5%9E%8B%E7%94%A8%E6%88%B7%E6%89%8B%E5%86%8C_CN.zip)
+For 玄铁曳影1520芯片原型用户手册_CN：[Click here](https://www.xrvm.cn/community/download?id=4344198194863869952)
 
 For TH1520 User Manual_EN：[Click here](https://occ-intl-prod.oss-ap-southeast-1.aliyuncs.com/resource//1698839996662/TH1520%20User%20Manual%20(1).zip)
 
