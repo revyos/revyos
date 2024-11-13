@@ -48,3 +48,11 @@ __RevyOS__ 的用户版镜像目前在 ISCAS（中国科学院软件研究所）
 TH1520 User Manual_EN：[点击此处](https://occ-intl-prod.oss-ap-southeast-1.aliyuncs.com/resource//1698839996662/TH1520%20User%20Manual%20(1).zip)
 
 曳影1520规格书V1.03: [点击此处](https://occ-oss-prod.oss-cn-hangzhou.aliyuncs.com/resource/889768/1698042403122/%E6%9B%B3%E5%BD%B11520%E8%A7%84%E6%A0%BC%E4%B9%A6V1.03.pdf)
+
+## 用户群组
+
+RevyOS 有自己的 Telegram 群组：[邀请链接](https://t.me/+Pi6px22-OsUxM2M1)
+
+## 实习生招聘
+
+现在正在招聘测试实习生，详情请看: [RevyOS小队测试实习生招聘](https://github.com/plctlab/weloveinterns/blob/master/open-internships.md#j143-revyos%E5%B0%8F%E9%98%9F%E6%B5%8B%E8%AF%95%E5%AE%9E%E4%B9%A0%E7%94%9F20241111%E5%BC%80%E6%94%BE100%E5%90%8D)
