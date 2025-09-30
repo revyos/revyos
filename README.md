@@ -18,12 +18,14 @@ The user version images of __RevyOS__ are currently updated on the ISCAS (Instit
 
 | Supported Devices | Image Download (Latest Version) | Flashing Tutorial | SD Card Support |
 | --- | --- | --- | --- |
-| Lichee Pi 4A | [20250420](https://mirror.iscas.ac.cn/revyos/extra/images/lpi4a/20250420/) | [Flashing Image](https://docs.revyos.dev/en/docs/Installation/licheepi4a/) | Supported |
-| LicheePi Cluster 4A | [20240720](https://mirror.iscas.ac.cn/revyos/extra/images/lpi4a/20240720/) | [Flashing Image](./Installation/licheepi4a.md)  |  |
-| LicheeConsole 4A | [20240720](https://mirror.iscas.ac.cn/revyos/extra/images/lcon4a/20240720/) | [Flashing Image](./Image%20flashing/licheeconsole4a.md)  |  |
-| Lichee Book 4A | [20240720](https://mirror.iscas.ac.cn/revyos/extra/images/laptop4a/20240720/) | [Flashing Image](./Image%20flashing/licheebook.md)  |  |
-| Milk-V Pioneer | [20241230](https://mirror.iscas.ac.cn/revyos/extra/images/sg2042/20241230/) | [Flashing Image](https://docs.revyos.dev/en/docs/Installation/milkv-pioneer/)  | Supported |
-| Milk-V Meles | [20250420](https://mirror.iscas.ac.cn/revyos/extra/images/meles/20250420/) | [Flashing Image](https://docs.revyos.dev/en/docs/Installation/milkv-meles/)  | Supported |
+| Lichee Pi 4A | [20250930](https://mirror.iscas.ac.cn/revyos/extra/images/lpi4a/20250930/) | [Flashing Image](https://docs.revyos.dev/en/docs/Installation/licheepi4a/) | Supported |
+| Milk-V Meles | [20250930](https://mirror.iscas.ac.cn/revyos/extra/images/meles/20250930/) | [Flashing Image](https://docs.revyos.dev/en/docs/Installation/milkv-meles/)  | Supported |
+| Lichee Cluster 4A | [20250930](https://mirror.iscas.ac.cn/revyos/extra/images/lpi4a/20250930/) | [Flashing Image](./Installation/licheepi4a.md)  | Supported |
+| Lichee Console 4A | [20250930](https://mirror.iscas.ac.cn/revyos/extra/images/lcon4a/20250930/) | [Flashing Image](./Image%20flashing/licheeconsole4a.md)  | Supported |
+| Lichee Book 4A | [20250930](https://mirror.iscas.ac.cn/revyos/extra/images/laptop4a/20250930/) | [Flashing Image](./Image%20flashing/licheebook.md)  | Supported |
+| Milk-V Pioneer / Sophgo EVB V1/V2  | [20250930](https://mirror.iscas.ac.cn/revyos/extra/images/sg2042/20250930/) | [Flashing Image](https://docs.revyos.dev/en/docs/Installation/milkv-pioneer/)  | Supported |
+| Sophgo SG2044 SRD3 | [20250930](https://mirror.iscas.ac.cn/revyos/extra/images/sg2044/20250930/) | In Progress  |  |
+| Sophgo Pisces | [20250930](https://mirror.iscas.ac.cn/revyos/extra/images/sg2042/20250930/) | In Progress  |  |
 | Beagle-Ahead | [20231210](https://mirror.iscas.ac.cn/revyos/extra/images/beagle/20231210/) | In Progress  |  |
 | Huiwei book | [20240617](https://mirror.iscas.ac.cn/revyos/extra/images/huiwei/test/20240617/) | In Progress  |  |
 
